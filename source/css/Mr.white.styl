@@ -1,1 +1,87 @@
 @import '../../bower_components/Han/index'
+
+html:lang(zh), html:lang(zh-Hant), [lang^='zh'], [lang*='Hant'], [lang='zh-TW'], [lang='zh-HK'], article strong:lang(zh), article strong:lang(zh-Hant)
+html:lang(zh-Latn), html:lang(ja-Latn), html:not(:lang(zh)):not(:lang(ja)), html *:lang(zh-Latn), html *:lang(ja-Latn), html *:not(:lang(zh)):not(:lang(ja)), article strong:lang(zh-Latn), article strong:lang(ja-Latn), article strong:not(:lang(zh)):not(:lang(ja)), article strong *:lang(zh-Latn), article strong *:lang(ja-Latn), article strong *:not(:lang(zh)):not(:lang(ja))
+	font-family:source sans pro, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans
+
+body,h1,h2,h3,h4,h5,p
+	font-weight:300
+
+a
+	display:inline-block
+	border-bottom:1px solid #eee
+	&:hover
+		color:#fbdd69
+
+hr
+	width: 100%
+	margin: 20px auto
+	height: 1px
+	border: 0
+	background-image: -webkit-linear-gradient(0deg,transparent,#d5d5d5,transparent)
+
+#index
+	position:relative
+	display:table
+	margin:0 auto
+	width:80%
+	max-width:800px
+	height:100vh
+	min-height:500px
+
+	.index-inner
+		display:table-cell
+		vertical-align:middle
+
+	article
+		text-align:center
+
+		h1
+			line-height:1
+
+			hr
+				margin-bottom:0
+
+			.date
+				font-size:1rem
+				color:#ccc
+
+	.copyright
+		padding:0 20px
+		display:inline-block
+
+		hr
+			margin-top:40px
+			margin-bottom:40px
+
+		a 
+			border-bottom:none
+			color:#555
+	    font-size:1.1rem
+
+			&:hover
+				text-decoration:underline
+
+	nav
+		text-align:center 
+
+		a
+			margin:0 10px
+			color:#222
+			font-size:1.2rem
+
+			&:hover
+				color:#fbdd69
+
+	.declaration
+		position:absolute
+		bottom:0
+		right:5%
+		color:#ccc
+		text-align:right
+
+		a
+			color:#999
+
+			&:hover
+				color:#fbdd69
