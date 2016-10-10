@@ -1,0 +1,25 @@
+{
+  "name": "hexo-mrwhite-theme",
+  "version": "0.0.0",
+  "authors": [
+    "Gu <a080206@sina.com>"
+  ],
+  "description": "Mr.white theme for hexo",
+  "keywords": [
+    "theme",
+    "hexo",
+    "white",
+    "simple"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Han": "~3.3.0"
+  }
+}
