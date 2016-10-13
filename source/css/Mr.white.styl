@@ -4,8 +4,12 @@ html:lang(zh), html:lang(zh-Hant), [lang^='zh'], [lang*='Hant'], [lang='zh-TW'],
 html:lang(zh-Latn), html:lang(ja-Latn), html:not(:lang(zh)):not(:lang(ja)), html *:lang(zh-Latn), html *:lang(ja-Latn), html *:not(:lang(zh)):not(:lang(ja)), article strong:lang(zh-Latn), article strong:lang(ja-Latn), article strong:not(:lang(zh)):not(:lang(ja)), article strong *:lang(zh-Latn), article strong *:lang(ja-Latn), article strong *:not(:lang(zh)):not(:lang(ja))
 	font-family:source sans pro, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans
 
-body,h1,h2,h3,h4,h5,p
-	font-weight:300
+h1,h2,h3,h4,h5
+	line-height:1.2
+	&,body,p
+		font-weight:300
+		&:first-child
+			margin-bottom:0
 
 a
 	display:inline-block
@@ -14,6 +18,7 @@ a
 
 	&:hover
 		color:#fbdd69
+		border-bottom-color: #fbdd69
 
 hr
 	width: 100%
@@ -21,6 +26,30 @@ hr
 	height: 1px
 	border: 0
 	background-image: -webkit-linear-gradient(0deg,transparent,#d5d5d5,transparent)
+
+article
+	text-align:center
+
+	h1>hr
+		margin-bottom:0
+
+	.date
+		font-size:1rem
+		color:#ccc
+		
+	.content
+		text-align:left
+
+.copyright
+	padding:0 20px
+
+nav
+	text-align:center 
+
+	a
+		margin:0 10px
+		font-size:1.2rem
+		font-weight:300
 
 #index
 	position:relative
@@ -33,45 +62,12 @@ hr
 
 	.index-inner
 		display:table-cell
+		padding-bottom:50px
 		vertical-align:middle
 
-	article
-		text-align:center
-
-		h1
-			line-height:1
-
-			hr
-				margin-bottom:0
-
-			.date
-				font-size:1rem
-				color:#ccc
-
-	.copyright
-		padding:0 20px
-		display:inline-block
-
-		hr
-			margin-top:40px
-			margin-bottom:40px
-
-		a 
-			border-bottom:none
-			color:#555
-	    font-size:1.1rem
-
-			&:hover
-				text-decoration:underline
-
-	nav
-		text-align:center 
-
 		a
-			margin:0 10px
-			color:#222
-			font-size:1.2rem
-
+			color:#555
+			font-size:1.1rem
 			&:hover
 				color:#fbdd69
 
@@ -88,10 +84,11 @@ hr
 			&:hover
 				color:#fbdd69
 
+
 #archive
 	display:table
 	margin:0 auto
-	width:80%
+	width:60%
 	max-width:800px
 	height:100vh
 	min-height:500px
@@ -148,24 +145,41 @@ hr
 				position:relative
 				font-size:2rem
 
+#pagination
+		margin-top:10px
+		padding-bottom:10px
+		color: #999;
+		font-size:1rem
+
+		a
+			color:#999
+			&:hover
+				color:#fbdd69
+				border-bottom-color: #fbdd69
+
+		.page-number
+			padding-left: 10px;
+
+		.prev-container,.next-container
+			display:inline-block
+			width:82px
+			text-align:center
+
+.post-container
+	margin:0 auto
+	width:80%
+	max-width:800px
+	height:100vh
+	min-height:500px
+	#post
+		h1
+			text-align:center
+		.copyright
+			text-align:center
+
 	#pagination
-			margin-top:10px
-			padding-bottom:10px
-			color: #999;
-			font-size:1rem
-
-			a
-				color:#999
-				&:hover
-					color:#fbdd69
-					border-bottom-color: #fbdd69
-
-			.page-number
-				padding-left: 10px;
-
-			.prev-container,.next-container
-				display:inline-block
-				width:82px
-				text-align:center
-
+		display:flex
+		justify-content:space-between
+		margin:20px auto
+		width:90%
 
