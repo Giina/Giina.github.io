@@ -1,0 +1,71 @@
+<div id="archive">
+  <div class="archive-inner">
+  <div class="archive-items-container">
+    <% var preYear; 
+       archive.posts.each(function(article) { 
+         if(preYear!==date(article.date,'YYYY')) {
+           preYear=date(article.date,'YYYY'); %>
+          <div class="archive-item">
+            <time class="year">
+              <%=preYear%>
+            </time>
+          </div>
+
+       <% } %>
+
+      <div class="archive-item">
+        <time datetime="<%=date_xml(article.date)%>">
+          <%= date(article.date,'MM-DD')%>
+        </time>
+
+        <% if (article.link) { %>
+
+          <!-- external link -->
+          <a href="<%=url_for(article.link)%>" target="_blank"><span><%=site.posts.length-site.posts.sort('date',-1).data.indexOf(article)%>.</span><%=article.title || 'No Title'%>
+          </a>
+
+        <% } else { %>
+
+          <!-- internal link -->
+          <a href="<%=url_for(article.path)%>"><span><%=site.posts.length-site.posts.sort('date',-1).data.indexOf(article)%>.</span><%=article.title || 'No Title'%>
+          </a>
+
+        <% } %>
+
+      </div>
+
+    <% }); %>
+
+    <nav id="pagination">
+      <div class="prev-container">
+      <% if (archive.prev_link) { %>
+        <a href="<%=url_for(archive.prev_link)%>" class="prev">&larr; Prev</a>
+      <% } else if (archive.prev && archive.prev.path) { %>
+        <a href="<%=url_for(archive.prev.path)%>" class="prev">&larr; Prev</a>
+      <% } %>
+      </div>
+
+      <% if (typeof archive.current === 'number' && typeof archive.total === 'number' && archive.total!==1) { %>
+        <span class="page-number">
+          Page <%=archive.current%> of&nbsp;&nbsp;<a class="last-page" href="/archives/page/<%=archive.total%>"><%=archive.total%></a>
+        </span>
+      <% } %>
+
+      <div class="next-container">
+      <% if (archive.next_link) { %>
+        <a href="<%=url_for(archive.next_link)%>" class="next">Next &rarr;</a>
+      <% } else if (archive.next && archive.next.path) { %>
+        <a href="<%=url_for(archive.next.path)%>" class="next">Next &rarr;</a>
+      <% } %>
+      </div>
+    </nav>
+    </div>
+    <nav id="menu">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/tags">Tags</a>
+      <a href="/categories">Categories</a>
+    </nav>
+  </div>
+  <%-partial('partials/declaration')%>
+</div>

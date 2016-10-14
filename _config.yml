@@ -8,6 +8,8 @@ menu:
   About: /about
   Contact: /contact
   Archives: /archives
+  Tags: /tags
+  Categories: /categories
 
 # Miscelaneous
 # favicon: /favicon.ico
@@ -19,3 +21,7 @@ stylesheets:
 # scripts loaded in the end of the body
 scripts:
 - /js/Mr.white.js
+
+# color set
+colors:
+  highlight:#fbdd69

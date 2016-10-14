@@ -6,10 +6,11 @@ html:lang(zh-Latn), html:lang(ja-Latn), html:not(:lang(zh)):not(:lang(ja)), html
 
 h1,h2,h3,h4,h5
 	line-height:1.2
-	&,body,p
-		font-weight:300
-		&:first-child
-			margin-bottom:0
+h1,h2,h3,h4,h5,body,p
+	font-weight:300
+body,p
+	&:first-child
+		margin-bottom:0
 
 a
 	display:inline-block
@@ -51,6 +52,19 @@ nav
 		font-size:1.2rem
 		font-weight:300
 
+.declaration
+		position:absolute
+		bottom:0
+		right:5%
+		color:#ccc
+		text-align:right
+
+		a
+			color:#999
+
+			&:hover
+				color:#fbdd69
+
 #index
 	position:relative
 	display:table
@@ -71,21 +85,8 @@ nav
 			&:hover
 				color:#fbdd69
 
-	.declaration
-		position:absolute
-		bottom:0
-		right:5%
-		color:#ccc
-		text-align:right
-
-		a
-			color:#999
-
-			&:hover
-				color:#fbdd69
-
-
 #archive
+	position:relative
 	display:table
 	margin:0 auto
 	width:60%
@@ -165,12 +166,16 @@ nav
 			width:82px
 			text-align:center
 
+#menu
+	margin-top:100px
+
 .post-container
+	position:relative
 	margin:0 auto
+	padding-bottom:50px
 	width:80%
 	max-width:800px
-	height:100vh
-	min-height:500px
+	height:100%
 	#post
 		h1
 			text-align:center
@@ -183,3 +188,65 @@ nav
 		margin:20px auto
 		width:90%
 
+#tag	
+	position:relative
+	display:table
+	margin:0 auto
+	width:60%
+	max-width:800px
+	height:100vh
+	min-height:500px
+
+	.tag-inner 
+		display:table-cell
+		vertical-align:middle
+		text-align:center
+
+		a
+			border-bottom:none
+
+#category
+	position:relative
+	display:table
+	margin:0 auto
+	width:60%
+	max-width:800px
+	height:100vh
+	min-height:500px
+
+	.category-inner		
+		display:table-cell
+		vertical-align:middle
+		text-align:center
+
+	.category-container
+		display:table
+		position:relative
+		float:left
+		margin:40px 4%
+		height:200px
+		width:25%
+		min-width:120px
+		border:1px solid #eee
+
+	.category
+		display:table-cell
+		vertical-align:middle
+		padding: 0 3%
+		width:96%
+		border-bottom:none
+		font-size:1.4rem
+		line-height:1.4
+		color:#fbdd69
+		word-break:break-all
+		&:hover
+			background:#eee
+
+		&:before
+			position:absolute
+			top:50%
+			left:-10%
+			content:''
+			height:1px
+			width:120%
+			background:#fbdd69
