@@ -44,14 +44,6 @@ article
 .copyright
 	padding:0 20px
 
-nav
-	text-align:center 
-
-	a
-		margin:0 10px
-		font-size:1.2rem
-		font-weight:300
-
 .declaration
 		position:absolute
 		bottom:0
@@ -145,6 +137,11 @@ nav
 			&.year
 				position:relative
 				font-size:2rem
+				&+h2
+					display:inline-block
+					margin:0 0 0 22px
+					height:40px
+					line-height:1
 
 #pagination
 		margin-top:10px
@@ -168,6 +165,11 @@ nav
 
 #menu
 	margin-top:100px
+	text-align:center
+	a
+		margin:0 10px
+		font-size:1.2rem
+		font-weight:300
 
 .post-container
 	position:relative
@@ -250,3 +252,17 @@ nav
 			height:1px
 			width:120%
 			background:#fbdd69
+
+#about
+	position:relative
+	display:table
+	margin:0 auto
+	width:60%
+	max-width:800px
+	height:100vh
+	min-height:500px
+	
+	.about-inner	
+		display:table-cell
+		vertical-align:middle
+		text-align:center

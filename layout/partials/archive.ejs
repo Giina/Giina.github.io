@@ -1,14 +1,15 @@
 <div id="archive">
   <div class="archive-inner">
   <div class="archive-items-container">
-    <% var preYear; 
+    <% var preYear,i=0; 
        archive.posts.each(function(article) { 
          if(preYear!==date(article.date,'YYYY')) {
-           preYear=date(article.date,'YYYY'); %>
+           preYear=date(article.date,'YYYY');i++; %>
           <div class="archive-item">
             <time class="year">
               <%=preYear%>
             </time>
+            <h2><%=archive.archive?'':archive.tag||archive.category%></h2>
           </div>
 
        <% } %>
@@ -21,7 +22,9 @@
         <% if (article.link) { %>
 
           <!-- external link -->
-          <a href="<%=url_for(article.link)%>" target="_blank"><span><%=site.posts.length-site.posts.sort('date',-1).data.indexOf(article)%>.</span><%=article.title || 'No Title'%>
+          <a href="<%=url_for(article.link)%>" target="_blank">
+            <span><%=archive.archive?site.posts.length-site.posts.sort('date',-1).data.indexOf(article):''%>.</span>
+            <%=article.title || 'No Title'%>
           </a>
 
         <% } else { %>

@@ -1,10 +1,22 @@
-<div id="category">
-	<div class="category-inner">
-	<% if(site.categories.length>0) { 
-	     site.categories.each(function(category){  console.log(category);%>
-	     
-	<div class="category-container"><a class="category" href="<%=category.path%>"><%=category.name%>
-	</a></div>
-	<% })} %>
+
+<% if(is_category()) {
+	%>
+	 <%-partial('partials/archive',{archive:page})%>
+	<%
+} else {
+	%>
+
+	<div id="category">
+		<div class="category-inner">
+		<% if(site.categories.length>0) { 
+			site.categories.each(function(category){ %>
+
+			<div class="category-container"><a class="category" href="/<%=category.path%>"><%=category.name%></a></div>
+
+			<% })} %>
+		</div>
 	</div>
-</div>
+
+	<%
+}%>
+		<%-partial('partials/declaration')%>
