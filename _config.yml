@@ -3,13 +3,13 @@
 language: zh
 
 # main menu navigation
-menu:
-  Home: /
-  About: /about
-  Contact: /contact
-  Archives: /archives
-  Tags: /tags
-  Categories: /categories
+#menu:
+#  Home: /
+#  About: /about
+#  Contact: /contact
+#  Archives: /archives
+#  Tags: /tags
+#  Categories: /categories
 
 # Miscelaneous
 # favicon: /favicon.ico

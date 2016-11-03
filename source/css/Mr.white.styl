@@ -2,267 +2,277 @@
 
 html:lang(zh), html:lang(zh-Hant), [lang^='zh'], [lang*='Hant'], [lang='zh-TW'], [lang='zh-HK'], article strong:lang(zh), article strong:lang(zh-Hant)
 html:lang(zh-Latn), html:lang(ja-Latn), html:not(:lang(zh)):not(:lang(ja)), html *:lang(zh-Latn), html *:lang(ja-Latn), html *:not(:lang(zh)):not(:lang(ja)), article strong:lang(zh-Latn), article strong:lang(ja-Latn), article strong:not(:lang(zh)):not(:lang(ja)), article strong *:lang(zh-Latn), article strong *:lang(ja-Latn), article strong *:not(:lang(zh)):not(:lang(ja))
-	font-family:source sans pro, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans
+  font-family: source sans pro, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans
 
-h1,h2,h3,h4,h5
-	line-height:1.2
-h1,h2,h3,h4,h5,body,p
-	font-weight:300
-body,p
-	&:first-child
-		margin-bottom:0
+h1, h2, h3, h4, h5
+  line-height: 1.2
+
+h1, h2, h3, h4, h5, body, p
+  font-weight: 300
+
+body, p
+  &:first-child
+    margin-bottom: 0
 
 a
-	display:inline-block
-	border-bottom:1px solid #eee
-	color:#222
+  display: inline-block
+  border-bottom: 1px solid #eee
+  color: #222
 
-	&:hover
-		color:#fbdd69
-		border-bottom-color: #fbdd69
+  &:hover
+    color: #fbdd69
+    border-bottom-color: #fbdd69
 
 hr
-	width: 100%
-	margin: 20px auto
-	height: 1px
-	border: 0
-	background-image: -webkit-linear-gradient(0deg,transparent,#d5d5d5,transparent)
+  width: 100%
+  margin: 20px auto
+  height: 1px
+  border: 0
+  background-image: -webkit-linear-gradient(0deg, transparent, #d5d5d5, transparent)
 
 article
-	text-align:center
+  text-align: center
 
-	h1>hr
-		margin-bottom:0
+  h1 > hr
+    margin-bottom: 0
 
-	.date
-		font-size:1rem
-		color:#ccc
-		
-	.content
-		text-align:left
+  .date
+    font-size: 1rem
+    color: #ccc
+
+  .content
+    text-align: left
 
 .copyright
-	padding:0 20px
+  padding: 0 20px
+  a
+    margin-left: 10px
+    margin-right: 10px
 
 .declaration
-		position:absolute
-		bottom:0
-		right:5%
-		color:#ccc
-		text-align:right
+  position: absolute
+  bottom: 0
+  right: 5%
+  color: #ccc
+  text-align: right
 
-		a
-			color:#999
+  a
+    color: #999
 
-			&:hover
-				color:#fbdd69
+    &:hover
+      color: #fbdd69
 
 #index
-	position:relative
-	display:table
-	margin:0 auto
-	width:80%
-	max-width:800px
-	height:100vh
-	min-height:500px
+  position: relative
+  display: table
+  margin: 0 auto
+  width: 80%
+  max-width: 800px
+  height: 100vh
+  min-height: 500px
 
-	.index-inner
-		display:table-cell
-		padding-bottom:50px
-		vertical-align:middle
+  .index-inner
+    display: table-cell
+    padding-bottom: 50px
+    vertical-align: middle
 
-		a
-			color:#555
-			font-size:1.1rem
-			&:hover
-				color:#fbdd69
+    a
+      color: #555
+      font-size: 1.1rem
+      &:hover
+        color: #fbdd69
 
 #archive
-	position:relative
-	display:table
-	margin:0 auto
-	width:60%
-	max-width:800px
-	height:100vh
-	min-height:500px
+  position: relative
+  display: table
+  margin: 0 auto
+  width: 60%
+  max-width: 800px
+  height: 100vh
+  min-height: 500px
 
-	.archive-items-container
-		position:relative
-		margin-top:10%
-		font-size:1.2rem
+  .archive-items-container
+    position: relative
+    margin-top: 10%
+    font-size: 1.2rem
 
-		&:after
-			content:''
-			display:block
-			position:absolute
-			top:0
-			left:76px
-			width:2px
-			height:100%
-			border-radius:4px
-			background-color:#ccc
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: 76px
+      width: 2px
+      height: 100%
+      border-radius: 4px
+      background-color: #ccc
 
-	.archive-item
-		position:relative
-		margin-top:10px
-		padding-bottom:10px
-		border-bottom: 1px solid #eee
+  .archive-item
+    position: relative
+    margin-top: 10px
+    padding-bottom: 10px
+    border-bottom: 1px solid #eee
 
-		&:hover
-			border-bottom-color: #fbdd69
+    &:hover
+      border-bottom-color: #fbdd69
 
-		a
-			box-sizing:border-box
-			padding-left:82px
-			width:100%
-			border-bottom:none
+    a
+      box-sizing: border-box
+      padding-left: 82px
+      width: 100%
+      border-bottom: none
 
-		span
-			display:inline-block
-			width:2rem	
-			text-align:center	
+    span
+      display: inline-block
+      width: 2rem
+      text-align: center
 
-		time
-			position:absolute
-			box-sizing:border-box
-			width:82px
-			text-align:center
+    time
+      position: absolute
+      box-sizing: border-box
+      width: 82px
+      text-align: center
 
-			&:after
-				content:''
-				width:8px
-				height:8px
-				border-radius:8px
+      &:after
+        content: ''
+        width: 8px
+        height: 8px
+        border-radius: 8px
 
-			&.year
-				position:relative
-				font-size:2rem
-				&+h2
-					display:inline-block
-					margin:0 0 0 22px
-					height:40px
-					line-height:1
+      &.year
+        position: relative
+        font-size: 2rem
+        & + h2
+          display: inline-block
+          margin: 0 0 0 22px
+          height: 40px
+          line-height: 1
 
 #pagination
-		margin-top:10px
-		padding-bottom:10px
-		color: #999;
-		font-size:1rem
+  margin-top: 10px
+  padding-bottom: 10px
+  color: #999;
+  font-size: 1rem
 
-		a
-			color:#999
-			&:hover
-				color:#fbdd69
-				border-bottom-color: #fbdd69
+  a
+    color: #999
+    &:hover
+      color: #fbdd69
+      border-bottom-color: #fbdd69
 
-		.page-number
-			padding-left: 10px;
+  .page-number
+    padding-left: 10px;
 
-		.prev-container,.next-container
-			display:inline-block
-			width:82px
-			text-align:center
+  .prev-container, .next-container
+    display: inline-block
+    width: 82px
+    text-align: center
 
 #menu
-	margin-top:100px
-	text-align:center
-	a
-		margin:0 10px
-		font-size:1.2rem
-		font-weight:300
+  margin-top: 100px
+  text-align: center
+  a
+    margin: 0 10px
+    font-size: 1.2rem
+    font-weight: 300
 
 .post-container
-	position:relative
-	margin:0 auto
-	padding-bottom:50px
-	width:80%
-	max-width:800px
-	height:100%
-	#post
-		h1
-			text-align:center
-		.copyright
-			text-align:center
+  position: relative
+  margin: 0 auto
+  padding-bottom: 50px
+  width: 80%
+  max-width: 800px
+  height: 100%
+  #post
+    h1
+      text-align: center
+    .copyright
+      text-align: center
 
-	#pagination
-		display:flex
-		justify-content:space-between
-		margin:20px auto
-		width:90%
+  #pagination
+    display: flex
+    justify-content: space-between
+    margin: 20px auto
+    width: 90%
 
-#tag	
-	position:relative
-	display:table
-	margin:0 auto
-	width:60%
-	max-width:800px
-	height:100vh
-	min-height:500px
+#tag
+  position: relative
+  display: table
+  margin: 0 auto
+  width: 60%
+  max-width: 800px
+  height: 100vh
+  min-height: 500px
 
-	.tag-inner 
-		display:table-cell
-		vertical-align:middle
-		text-align:center
+  .tag-inner
+    display: table-cell
+    vertical-align: middle
+    text-align: center
 
-		a
-			border-bottom:none
+    a
+      border-bottom: none
 
 #category
-	position:relative
-	display:table
-	margin:0 auto
-	width:60%
-	max-width:800px
-	height:100vh
-	min-height:500px
+  position: relative
+  display: table
+  margin: 0 auto
+  width: 60%
+  max-width: 800px
+  height: 100vh
+  min-height: 500px
 
-	.category-inner		
-		display:table-cell
-		vertical-align:middle
-		text-align:center
+  .category-inner
+    display: table-cell
+    vertical-align: middle
+    text-align: center
 
-	.category-container
-		display:table
-		position:relative
-		float:left
-		margin:40px 4%
-		height:200px
-		width:25%
-		min-width:120px
-		border:1px solid #eee
+  .category-container
+    display: table
+    position: relative
+    float: left
+    box-sizing: border-box
+    margin: 40px 4%
+    height: 200px
+    width: 25%
+    min-width: 120px
+    border: 2px solid #eee
+    border-left-width: 10px
+    border-radius: 0 6px 6px 0
+    &:hover
+      //border-color: #fbdd69
+    &:before
+      position: absolute
+      top: 50%
+      margin-top: -1px
+      left: -10px
+      content: ''
+      height: 2px
+      width: 200px
+      background: rgba(251, 221, 105, 1)
 
-	.category
-		display:table-cell
-		vertical-align:middle
-		padding: 0 3%
-		width:96%
-		border-bottom:none
-		font-size:1.4rem
-		line-height:1.4
-		color:#fbdd69
-		word-break:break-all
-		&:hover
-			background:#eee
-
-		&:before
-			position:absolute
-			top:50%
-			left:-10%
-			content:''
-			height:1px
-			width:120%
-			background:#fbdd69
+  .category
+    display: table-cell
+    vertical-align: middle
+    padding: 0 3%
+    width: 96%
+    border-bottom: none
+    font-size: 1.4rem
+    line-height: 1.4
+    color: #eee
+    word-break: break-all
+    &:hover
+      color: #fbdd69
 
 #about
-	position:relative
-	display:table
-	margin:0 auto
-	width:60%
-	max-width:800px
-	height:100vh
-	min-height:500px
-	
-	.about-inner	
-		display:table-cell
-		vertical-align:middle
-		text-align:center
+  position: relative
+  display: table
+  margin: 0 auto
+  width: 60%
+  max-width: 800px
+  height: 100vh
+  min-height: 500px
+
+  .about-inner
+    display: table-cell
+    vertical-align: middle
+    text-align: center

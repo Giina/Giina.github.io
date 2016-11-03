@@ -1,20 +1,15 @@
+<% if(is_tag()) { %>
+<%- partial('partials/archive', {archive: page}) %>
+<% } else { %>
 
-<% if(is_tag()) {
-	%>
-	 <%-partial('partials/archive',{archive:page})%>
-	<%
-} else {
-	%>
+<div id="tag">
+    <div class="tag-inner">
+        <% if(site.tags.length > 0) {
+        site.tags.each(function(tag){ %>
+        <a href="<%- url_for(tag.path) %>" style="font-size:<%= (Math.pow(tag.length, 1)) %>rem"><%= tag.name %></a>
+        <% })} %>
+    </div>
+</div>
 
-	<div id="tag">
-		<div class="tag-inner">
-		<% if(site.tags.length>0) { 
-	     site.tags.each(function(tag){ %>
-	     <a href="/<%=tag.path%>" style="font-size:<%=(Math.pow(tag.length,1))%>rem"><%=tag.name%></a>
-	    <% })} %>
-		</div>
-	</div>
-
-	<%
-}%>
-		<%-partial('partials/declaration')%>
+<% } %>
+<%- partial('partials/declaration') %>
