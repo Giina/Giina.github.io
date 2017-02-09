@@ -1,8 +1,11 @@
+@import '../../bower_components/github-markdown-css/github-markdown.css'
 @import '../../bower_components/Han/index'
 
 html:lang(zh), html:lang(zh-Hant), [lang^='zh'], [lang*='Hant'], [lang='zh-TW'], [lang='zh-HK'], article strong:lang(zh), article strong:lang(zh-Hant)
-html:lang(zh-Latn), html:lang(ja-Latn), html:not(:lang(zh)):not(:lang(ja)), html *:lang(zh-Latn), html *:lang(ja-Latn), html *:not(:lang(zh)):not(:lang(ja)), article strong:lang(zh-Latn), article strong:lang(ja-Latn), article strong:not(:lang(zh)):not(:lang(ja)), article strong *:lang(zh-Latn), article strong *:lang(ja-Latn), article strong *:not(:lang(zh)):not(:lang(ja))
-  font-family: source sans pro, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans
+html:lang(zh-Latn), html:lang(ja-Latn), html:not(:lang(zh)):not(:lang(ja)), html *:lang(zh-Latn), html *:lang(ja-Latn), html *:not(:lang(zh)):not(:lang(ja)), article strong:lang(zh-Latn), article strong:lang(ja-Latn), article strong:not(:lang(zh)):not(:lang(ja)), article strong *:lang(zh-Latn), article strong *:lang(ja-Latn), article strong *:not(:lang(zh)):not(:lang(ja)),
+.markdown-body
+  //font-family: source sans pro, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans
+  font-family: 'Biaodian Pro Sans CNS', "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif
 
 h1, h2, h3, h4, h5
   line-height: 1.2
@@ -16,12 +19,11 @@ body, p
 
 a
   display: inline-block
-  border-bottom: 1px solid #eee
+  border-bottom: 1px solid #fbdd69
   color: #222
 
   &:hover
     color: #fbdd69
-    border-bottom-color: #fbdd69
 
 hr
   width: 100%
@@ -45,9 +47,7 @@ article
 
 .copyright
   padding: 0 20px
-  a
-    margin-left: 10px
-    margin-right: 10px
+  letter-spacing: .1em
 
 .declaration
   position: absolute
@@ -57,7 +57,9 @@ article
   text-align: right
 
   a
-    color: #999
+    margin-left: 5px
+    margin-right: 5px
+    color: #ccc
 
     &:hover
       color: #fbdd69
@@ -75,12 +77,6 @@ article
     display: table-cell
     padding-bottom: 50px
     vertical-align: middle
-
-    a
-      color: #555
-      font-size: 1.1rem
-      &:hover
-        color: #fbdd69
 
 #archive
   position: relative
@@ -276,3 +272,8 @@ article
     display: table-cell
     vertical-align: middle
     text-align: center
+
+.markdown-body
+  a
+    &:hover, &:active
+      text-decoration: none
