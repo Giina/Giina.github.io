@@ -20,6 +20,7 @@
     "tests"
   ],
   "dependencies": {
-    "Han": "~3.3.0"
+    "Han": "~3.3.0",
+    "github-markdown-css": "~2.4.1"
   }
 }
