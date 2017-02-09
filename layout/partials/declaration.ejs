@@ -1,6 +1,7 @@
 <!-- 声明模块 -->
 <P class="declaration">
-    Copyright © <%- config.date > moment().year() ? '2016-' + moment().year() : '2016' %> by <a
-            href="/about"><%= config.author %></a> , Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> ,
-    Theme inspired by <a href="https://github.com/geekplux/hexo-theme-typing" target="_blank">typing</a>
+    Copyright © <%- config.date > moment().year() ? '2016-' + moment().year() : '2016' %> by
+    <a href="<%- url_for('/about') %>"><%= config.author %></a>,&nbsp;&nbsp;Powered by
+    <a href="http://hexo.io/" target="_blank">Hexo</a>,&nbsp;&nbsp;Theme inspired by
+    <a href="https://github.com/geekplux/hexo-theme-typing" target="_blank">typing</a>
 </P>
