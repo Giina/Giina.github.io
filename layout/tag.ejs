@@ -8,8 +8,8 @@
         site.tags.each(function(tag){ %>
         <a href="<%- url_for(tag.path) %>" style="font-size:<%= (Math.pow(tag.length, 1)) %>rem"><%= tag.name %></a>
         <% })} %>
+        <%- partial('partials/declaration') %>
     </div>
 </div>
 
 <% } %>
-<%- partial('partials/declaration') %>

@@ -1,11 +1,10 @@
 @import '../../bower_components/github-markdown-css/github-markdown.css'
-@import '../../bower_components/Han/index'
+@import "../../bower_components/Han/index.styl"
 
 html:lang(zh), html:lang(zh-Hant), [lang^='zh'], [lang*='Hant'], [lang='zh-TW'], [lang='zh-HK'], article strong:lang(zh), article strong:lang(zh-Hant)
 html:lang(zh-Latn), html:lang(ja-Latn), html:not(:lang(zh)):not(:lang(ja)), html *:lang(zh-Latn), html *:lang(ja-Latn), html *:not(:lang(zh)):not(:lang(ja)), article strong:lang(zh-Latn), article strong:lang(ja-Latn), article strong:not(:lang(zh)):not(:lang(ja)), article strong *:lang(zh-Latn), article strong *:lang(ja-Latn), article strong *:not(:lang(zh)):not(:lang(ja)),
 .markdown-body
-  //font-family: source sans pro, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans
-  font-family: 'Biaodian Pro Sans CNS', "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif
+  font-family: source sans pro, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans
 
 h1, h2, h3, h4, h5
   line-height: 1.2
@@ -229,7 +228,7 @@ article
     box-sizing: border-box
     margin: 40px 4%
     height: 200px
-    width: 25%
+    width: 200px
     min-width: 120px
     border: 2px solid #eee
     border-left-width: 10px
@@ -275,5 +274,11 @@ article
 
 .markdown-body
   a
+    color: inherit
     &:hover, &:active
+      color: #fbdd69
       text-decoration: none
+  code
+    letter-spacing: .2px
+  blockquote:lang(zh)
+    font-family: source sans pro, PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans
