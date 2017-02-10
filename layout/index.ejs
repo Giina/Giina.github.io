@@ -2,25 +2,7 @@
     <div class="index-inner">
         <% if (page.posts.length > 0) { %>
         <% page.posts.each(function(post) { %>
-        <article>
-            <h1><%= post.title %>
-                <hr>
-            </h1>
-
-            <span class="date"><%- date(post.updated) %></span>
-            <div class="markdown-body content">
-                <%- post.content %>
-            </div>
-            <% if (!post.copylink) { %>
-            <br/>
-            <hr>
-            <%- partial('partials/copyright') %>
-            <% } else { %>
-            <hr>
-            <p>版权声明: 转载作品，本文来源于<a href="<%= page.copylink %>" target="_blank"><%= page.copylink %></a>，由[我]整编而成。</p>
-            <% } %>
-
-        </article>
+        <%- partial('partials/article',{article:post}) %>
         <% });
         } %>
         <hr>

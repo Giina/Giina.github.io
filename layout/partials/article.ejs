@@ -1,0 +1,17 @@
+<article id="post">
+    <h1><%= article.title %>
+        <hr>
+    </h1>
+    <span class="date"><%- date(article.updated) %></span>
+    <div class="content markdown-body">
+        <%- article.content %>
+    </div>
+    <% if (!article.copylink) { %>
+    <br/>
+    <hr>
+    <%- partial('partials/copyright') %>
+    <% } else { %>
+    <hr>
+    <p>版权声明: 转载作品，本文来源于<a href="<%= article.copylink %>" target="_blank"><%= article.copylink %></a>，由[我]整编而成。</p>
+    <% } %>
+</article>
