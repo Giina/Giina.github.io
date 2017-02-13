@@ -2906,14 +2906,20 @@ article .content {
   width: 82px;
   text-align: center;
 }
-#menu {
+#menu,
+.menu {
   margin-top: 100px;
   text-align: center;
 }
-#menu a {
+#menu a,
+.menu a {
   margin: 0 10px;
   font-size: 1.2rem;
   font-weight: 300;
+}
+#menu a.active,
+.menu a.active {
+  color: #fbdd69;
 }
 .post-container {
   position: relative;
