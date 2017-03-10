@@ -25,13 +25,13 @@
     <h1>精确ip定位接口实现
         <hr>
     </h1>
-    <span class="date">2017-02-27</span>
+    <span class="date">2017-03-10</span>
     <div class="content markdown-body">
         <h3 id="精确IP定位的实现"><a href="#精确IP定位的实现" class="headerlink" title="精确IP定位的实现"></a>精确IP定位的实现</h3><p>从一个前端的角度想要实现精准IP定位，调用接口的时候势必会暴露自己的APPKey。等我发现这一点的时候我的APPKey其实已经暴露了好几个月，有点庆幸没有人抱着恶意访问网站。因此，精准IP定位的接口工作交给了后端的同事，API说明文档如下：</p>
 <blockquote>
-<p>/ip_location:</p>
-<p>直辖市请求接口：<br><a href="https://way.jd.com/RTBAsia/ip_district?ip=查询的IP地址&amp;appkey=RTBAisa购买所得APPKey" target="_blank" rel="external">https://way.jd.com/RTBAsia/ip_district?ip=查询的IP地址&amp;appkey=RTBAisa购买所得APPKey</a><br>接口说明文档地址：<a href="https://wx.jcloud.com/market/api/10366" target="_blank" rel="external">https://wx.jcloud.com/market/api/10366</a><br>注意：该地区返回行政区号需要查询行政区号字典，在浏览器中访问<a href="https://way.jd.com/RTBAsia/dictionary_district?appkey=c25bfe7445f025e295f73668687051cc" target="_blank" rel="external">https://way.jd.com/RTBAsia/dictionary_district?appkey=c25bfe7445f025e295f73668687051cc</a> 改地址能够得到字典内容，该接口说明文档为<a href="https://wx.jcloud.com/market/datas/18/10367" target="_blank" rel="external">https://wx.jcloud.com/market/datas/18/10367</a> </p>
-<p>一般地址请求接口：<br><a href="http://restapi.amap.com/v3/ip?key=高德地图创建的接口APPKey&amp;ip=查询的IP地址" target="_blank" rel="external">http://restapi.amap.com/v3/ip?key=高德地图创建的接口APPKey&amp;ip=查询的IP地址</a><br>接口说明文档地址：<a href="http://lbs.amap.com/api/webservice/guide/api/ipconfig/#ip" target="_blank" rel="external">http://lbs.amap.com/api/webservice/guide/api/ipconfig/#ip</a></p>
+<p>ip_location:</p>
+<p>直辖市请求接口： <a href="https://way.jd.com/RTBAsia/ip_district?ip=查询的IP地址&amp;appkey=RTBAisa购买所得APPKey" target="_blank" rel="external">https://way.jd.com/RTBAsia/ip_district?ip=查询的IP地址&amp;appkey=RTBAisa购买所得APPKey</a><br>接口说明文档地址：<a href="https://wx.jcloud.com/market/api/10366" target="_blank" rel="external">https://wx.jcloud.com/market/api/10366</a><br>注意：该地区返回行政区号需要查询行政区号字典，在浏览器中访问<a href="https://way.jd.com/RTBAsia/dictionary_district?appkey=c25bfe7445f025e295f73668687051cc" target="_blank" rel="external">https://way.jd.com/RTBAsia/dictionary_district?appkey=c25bfe7445f025e295f73668687051cc</a> 改地址能够得到字典内容，该接口说明文档为<a href="https://wx.jcloud.com/market/datas/18/10367" target="_blank" rel="external">https://wx.jcloud.com/market/datas/18/10367</a> </p>
+<p>一般地址请求接口： <a href="http://restapi.amap.com/v3/ip?key=高德地图创建的接口APPKey&amp;ip=查询的IP地址" target="_blank" rel="external">http://restapi.amap.com/v3/ip?key=高德地图创建的接口APPKey&amp;ip=查询的IP地址</a><br>接口说明文档地址：<a href="http://lbs.amap.com/api/webservice/guide/api/ipconfig/#ip" target="_blank" rel="external">http://lbs.amap.com/api/webservice/guide/api/ipconfig/#ip</a></p>
 <p>接口返回结果参数说明：</p>
 </blockquote>
 <table>
