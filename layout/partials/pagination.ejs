@@ -1,8 +1,8 @@
 <nav id="pagination" class="menu">
     <% if (page.prev_link) { %>
-    <a href="<%= url_for(page.prev_link) %>" title="<%= page.prev.title %>" class="prev">&larr; Prev</a>
+    <a href="<%= url_for(page.prev_link) %>" title="<%= page.prev.title %>" class="prev">&larr; next</a>
     <% } else if (page.prev && page.prev.path) { %>
-    <a href="<%= url_for(page.prev.path) %>" title="<%= page.prev.title %>" class="prev">&larr; Prev</a>
+    <a href="<%= url_for(page.prev.path) %>" title="<%= page.prev.title %>" class="prev">&larr; next</a>
     <% } else { %>
     <a href="javescript:void(0)" style="visibility:hidden">&larr; Prev</a>
     <% } %>
@@ -10,9 +10,9 @@
     <%- partial('partials/navbar') %>
 
     <% if (page.next_link) { %>
-    <a href="<%= url_for(page.next_link) %>" title="<%= page.next.title %>" class="next">Next &rarr;</a>
+    <a href="<%= url_for(page.next_link) %>" title="<%= page.next.title %>" class="next">prev &rarr;</a>
     <% } else if (page.next && page.next.path) { %>
-    <a href="<%= url_for(page.next.path) %>" title="<%= page.next.title %>" class="next">Next &rarr;</a>
+    <a href="<%= url_for(page.next.path) %>" title="<%= page.next.title %>" class="next">prev &rarr;</a>
     <% } else { %>
     <a href="javescript:void(0)" style="visibility:hidden">Next &rarr;</a>
     <% } %>
