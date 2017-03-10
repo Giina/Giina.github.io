@@ -91,4 +91,4 @@ deploy:
   type: git
   repo: git@github.com:Giina/Giina.github.io.git
   branch: master
-  message: v2
+  message:
