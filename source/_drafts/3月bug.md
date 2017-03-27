@@ -39,3 +39,15 @@ tags:
 在博客仓库中，我曾经在source文件夹下新建了git仓库，然后它的父文件夹作为一个git仓库时会记录source文件夹的存在但不记录其中内容的改变（git仓库嵌套），我删除source子仓库后父仓库对其中改变无动于衷。
 
 解决：重命名source文件夹，提交，将文件夹名字改回source。我猜原因大概是要形成记录。
+
+5. ### webstorm总是因为npm_modules崩溃
+
+通常我都是在打开项目npm install结束之后设置文件夹目录exclude，但是这样很容易在没设置之前开启项目时webstorm崩溃，然后我在想是不是有什么方式能让webstorm自动忽略npm_modules，不用每次手动exclude。[答案](http://www.cnblogs.com/chengwb/p/6183440.html)
+
+6. ### 浏览器访问http://localhost:8080 时不加载template文件：net::ERR_BLOCKED_BY_CLIENT
+
+装了adblocker[答案](http://stackoverflow.com/questions/23341765/getting-neterr-blocked-by-client-error-on-some-ajax-calls)
+
+7. ### 打开vue-hackernews-2.0的js文件会报错：“are not supported by current JavaScript version”
+
+`ctrl`+`alt`+`s`调出设置项，点击`Languages & Frameworks`目录下的`javascript`，右侧选择 javascript language version

@@ -8,8 +8,6 @@ tags: 技
 
 ##<span id="oocss">OOCSS</span>
 
-
-
 ##<span id="acss">ACSS</span>
 
 ##<span id="bem">BEM</span>
