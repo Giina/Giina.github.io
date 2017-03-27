@@ -22,21 +22,32 @@
         
         
         <article id="post">
-    <h1>2月bug
+    <h1>精确ip定位调研
         <hr>
     </h1>
-    <span class="date">2017-03-10</span>
+    <span class="date">2017-02-17</span>
     <div class="content markdown-body">
-        <blockquote>
-</blockquote>
-<h4 id="1-用webstorm在chrome调试页面时一直弹出说页面未经授权。"><a href="#1-用webstorm在chrome调试页面时一直弹出说页面未经授权。" class="headerlink" title="1. 用webstorm在chrome调试页面时一直弹出说页面未经授权。"></a>1. 用webstorm在chrome调试页面时一直弹出说页面未经授权。</h4><p><code>ctrl_alt_s</code> 或者 <code>File &gt; Settings &gt; Build、Execution、Deployment &gt; Debugger</code> 选中 <code>Allow unsigned request</code> </p>
+        <p>调研目标：高精度ip定位（精确到直辖市的各个区）<br>调研流程：搜索现有服务商 -&gt; 试用服务 -&gt; 生成报告<br>调研标准：服务质量（速度，稳定，客服反馈），服务价格，口碑</p>
+<h3 id="1-百度高精度ip定位"><a href="#1-百度高精度ip定位" class="headerlink" title="1. 百度高精度ip定位"></a>1. <a href="http://bbs.lbsyun.baidu.com/forum.php?mod=viewthread&amp;tid=123916&amp;highlight=%E9%AB%98%E7%B2%BE%E5%BA%A6IP" target="_blank" rel="external">百度高精度ip定位</a></h3><p>百度咨询回复内容：</p>
 <blockquote>
-<p><a href="https://segmentfault.com/q/1010000005600389/a-1020000005648617" target="_blank" rel="external">答案</a></p>
+<p>因为这个接口能够在用户不知情的情况下获取用户的定位。会涉及到隐私，这块在国家政策上有些敏感。何时启用目前并没有排期，不好意思。</p>
+<p>关于高精度IP定位服务，之前我们内部做了一些调整，目前已经不公开对外发布了。<br>但是会根据重点合作伙伴的需求情况，在签订合作协议，保证数据安全的基础之上，对外提供服务使用。<br>你们需要高精度IP定位服务，请问你们的具体使用场景是什么？每天的使用量级会是多少？</p>
 </blockquote>
-<h4 id="2-jquery-ui-min-js-Uncaught-TypeError-b-nodeName-toLowerCase-is-not-a-function"><a href="#2-jquery-ui-min-js-Uncaught-TypeError-b-nodeName-toLowerCase-is-not-a-function" class="headerlink" title="2. jquery-ui.min.js: Uncaught TypeError: b.nodeName.toLowerCase is not a function"></a>2. jquery-ui.min.js: Uncaught TypeError: b.nodeName.toLowerCase is not a function</h4><p>修改与之前貌似name是大小写+下划线，修改成全部小写以后就正常了，所以还是不知道错在哪</p>
-<blockquote>
-<p><a href="http://blog.csdn.net/you23hai45/article/details/51881328" target="_blank" rel="external">答案</a></p>
-</blockquote>
+<p>百度回复速度过慢，是否需要发送合作需求至相关邮箱？</p>
+<h3 id="2-RTBAisa·IP地址区县级归属地"><a href="#2-RTBAisa·IP地址区县级归属地" class="headerlink" title="2. RTBAisa·IP地址区县级归属地"></a>2. <a href="http://www.rtbasia.com/" target="_blank" rel="external">RTBAisa·IP地址区县级归属地</a></h3><p><a href="http://wx.jcloud.com/market/api/10366" target="_blank" rel="external">测试API</a></p>
+<p>18元/20000次，188元/30万次，5888元/5千万次</p>
+<h3 id="3-IPIP-NET"><a href="#3-IPIP-NET" class="headerlink" title="3. IPIP.NET"></a>3. <a href="https://www.ipip.net/price.html" target="_blank" rel="external">IPIP.NET</a></h3><p>IP数据库区县级精度版价格为3.6万/年，<a href="https://www.ipip.net/price.html#ip_district" target="_blank" rel="external">查看更多</a><br>且说明中建议配合地级市IP数据库联合使用。<br>客户服务较广。</p>
+<h3 id="4-互联网IP地理信息标准库"><a href="#4-互联网IP地理信息标准库" class="headerlink" title="4. 互联网IP地理信息标准库"></a>4. <a href="http://iac-i.org/" target="_blank" rel="external">互联网IP地理信息标准库</a></h3><ul>
+<li>A类： 基础IP库15,000元/年；</li>
+<li>B类：<ul>
+<li>移动IP库：10,000元/年</li>
+<li>区县IP库：10,000元/年</li>
+<li>高校IP库：5,000元/年</li>
+</ul>
+</li>
+</ul>
+<p>根据需求，年费为2.5万元/年不限次数使用</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>根据网站首页省市定位的需求，建议使用2号服务。</p>
 
     </div>
     
