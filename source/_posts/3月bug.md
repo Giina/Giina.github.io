@@ -1,7 +1,11 @@
 ---
 title: 3月bug
-tags:
+lang: zh
+date: 2017-04-11 09:59:37
+tags: ["bug"]
+category: bug
 ---
+
 1. ### TypeError: encodeUriSegment is not a function... in angular-resource.js
 
 > I got the issue with angualr-resource 1.6.0. I did not find the issue in 1.5.8 . [angular-resource.js encodeUriSegment Issue #5438](https://github.com/angular/angular.js/issues/5438)
@@ -51,3 +55,11 @@ tags:
 7. ### 打开vue-hackernews-2.0的js文件会报错：“are not supported by current JavaScript version”
 
 `ctrl`+`alt`+`s`调出设置项，点击`Languages & Frameworks`目录下的`javascript`，右侧选择 javascript language version
+
+8. ### angular:Multiple directives asking for templates on
+
+在directive中定义了AC 然后元素attribute和class同时出现了
+
+9. ### jquery:`$("").hasClass()` 与 `$("")[0].classList.contains`
+
+[.hasClass()](http://api.jquery.com/hasClass/)

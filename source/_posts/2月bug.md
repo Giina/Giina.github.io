@@ -2,7 +2,7 @@
 title: 2月bug
 lang: zh
 date: 2017-02-27 10:01:45
-tags: ["bug","2月"]
+tags: ["bug"]
 category: bug
 ---
 > 
