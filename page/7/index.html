@@ -22,60 +22,26 @@
         
         
         <article id="post">
-    <h1>精确ip定位接口实现
+    <h1>用户场景分析
         <hr>
     </h1>
-    <span class="date">2017-03-10</span>
+    <span class="date">2017-02-09</span>
     <div class="content markdown-body">
-        <h3 id="精确IP定位的实现"><a href="#精确IP定位的实现" class="headerlink" title="精确IP定位的实现"></a>精确IP定位的实现</h3><p>从一个前端的角度想要实现精准IP定位，调用接口的时候势必会暴露自己的APPKey。等我发现这一点的时候我的APPKey其实已经暴露了好几个月，有点庆幸没有人抱着恶意访问网站。因此，精准IP定位的接口工作交给了后端的同事，API说明文档如下：</p>
-<blockquote>
-<p>ip_location:</p>
-<p>直辖市请求接口： <a href="https://way.jd.com/RTBAsia/ip_district?ip=查询的IP地址&amp;appkey=RTBAisa购买所得APPKey" target="_blank" rel="external">https://way.jd.com/RTBAsia/ip_district?ip=查询的IP地址&amp;appkey=RTBAisa购买所得APPKey</a><br>接口说明文档地址：<a href="https://wx.jcloud.com/market/api/10366" target="_blank" rel="external">https://wx.jcloud.com/market/api/10366</a><br>注意：该地区返回行政区号需要查询行政区号字典，在浏览器中访问<a href="https://way.jd.com/RTBAsia/dictionary_district?appkey=c25bfe7445f025e295f73668687051cc" target="_blank" rel="external">https://way.jd.com/RTBAsia/dictionary_district?appkey=c25bfe7445f025e295f73668687051cc</a> 改地址能够得到字典内容，该接口说明文档为<a href="https://wx.jcloud.com/market/datas/18/10367" target="_blank" rel="external">https://wx.jcloud.com/market/datas/18/10367</a> </p>
-<p>一般地址请求接口： <a href="http://restapi.amap.com/v3/ip?key=高德地图创建的接口APPKey&amp;ip=查询的IP地址" target="_blank" rel="external">http://restapi.amap.com/v3/ip?key=高德地图创建的接口APPKey&amp;ip=查询的IP地址</a><br>接口说明文档地址：<a href="http://lbs.amap.com/api/webservice/guide/api/ipconfig/#ip" target="_blank" rel="external">http://lbs.amap.com/api/webservice/guide/api/ipconfig/#ip</a></p>
-<p>接口返回结果参数说明：</p>
+        <h3 id="基于网站的用户场景分析："><a href="#基于网站的用户场景分析：" class="headerlink" title="基于网站的用户场景分析："></a>基于网站的用户场景分析：</h3><blockquote>
+<h4 id="参考内容："><a href="#参考内容：" class="headerlink" title="参考内容："></a>参考内容：</h4><ol>
+<li><a href="http://www.aliued.cn/2016/08/24/%E5%9F%BA%E4%BA%8E%E5%9C%BA%E6%99%AF%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95-2.html" target="_blank" rel="external">基于场景的设计方法</a></li>
+<li><a href="http://www.360doc.com/content/15/0305/17/476103_452782599.shtml" target="_blank" rel="external">大众点评-高转化率传单：~把发传单当做做一件产品</a></li>
+<li><a href="https://www.douban.com/group/topic/72952227/" target="_blank" rel="external">产品设计的用户场景分析：明确用户需求，根据需求场景改善产品</a></li>
+<li><a href="https://www.douban.com/group/topic/72990584/" target="_blank" rel="external">关于搜索功能用户场景分析：细分搜索场景</a></li>
+</ol>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>示例值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>province</td>
-<td>string</td>
-<td>‘浙江省’/‘上海市’</td>
-<td>省份/直辖市名称</td>
-</tr>
-<tr>
-<td>city</td>
-<td>string</td>
-<td>‘杭州市’/‘杨浦区’</td>
-<td>城市/区域名称</td>
-</tr>
-<tr>
-<td>isMunicipality</td>
-<td>boolean</td>
-<td>True / False</td>
-<td>是否是直辖市</td>
-</tr>
-<tr>
-<td>status</td>
-<td>int</td>
-<td>返回结果状态值</td>
-<td>值为0或1,0表示失败；1表示成功</td>
-</tr>
-<tr>
-<td>info</td>
-<td>string</td>
-<td>返回状态说明</td>
-<td>返回状态说明，status为0时，info返回错误原因，否则返回“OK”。</td>
-</tr>
-</tbody>
-</table>
+<h4 id="场景分析"><a href="#场景分析" class="headerlink" title="场景分析"></a>场景分析</h4><ul>
+<li>地点：电脑/移动设备</li>
+<li>用户画像：<code>用户行为特征报告</code>、<code>普遍影响用户行为和决策的内外因</code><blockquote>
+<p>前者我们提供的是用户肖像，是细致而全面的用户信息集合。后者我们提供的是用户画像，传递普遍影响用户行为和决策的内外因（已处理过的用户信息集合）。两者都是为了了解用户，前者帮助我们了解产品为谁设计？（这套房卖给谁）；后者帮护我们了解用户为什么会有这个行为？（这套房为什么会被买走）。——<a href="http://www.aliued.cn/2017/01/18/%e6%b5%85%e6%9e%90personas%e5%9c%a8b2b%e8%ae%be%e8%ae%a1%e4%b8%ad%e7%9a%84%e5%88%9b%e5%bb%ba%e5%92%8c%e4%bd%bf%e7%94%a8.html" target="_blank" rel="external">浅析personas在b2b设计中的创建和使用</a></p>
+</blockquote>
+</li>
+</ul>
 
     </div>
     
