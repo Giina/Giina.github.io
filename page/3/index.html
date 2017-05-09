@@ -25,51 +25,24 @@
     <h1>3月bug
         <hr>
     </h1>
-    <span class="date">2017-05-02</span>
+    <span class="date">2017-05-09</span>
     <div class="content markdown-body">
-        <ol>
-<li><h3 id="TypeError-encodeUriSegment-is-not-a-function…-in-angular-resource-js"><a href="#TypeError-encodeUriSegment-is-not-a-function…-in-angular-resource-js" class="headerlink" title="TypeError: encodeUriSegment is not a function… in angular-resource.js"></a>TypeError: encodeUriSegment is not a function… in angular-resource.js</h3></li>
-</ol>
-<blockquote>
+        <h3 id="1-TypeError-encodeUriSegment-is-not-a-function…-in-angular-resource-js"><a href="#1-TypeError-encodeUriSegment-is-not-a-function…-in-angular-resource-js" class="headerlink" title="1. TypeError: encodeUriSegment is not a function… in angular-resource.js"></a>1. TypeError: encodeUriSegment is not a function… in angular-resource.js</h3><blockquote>
 <p>I got the issue with angualr-resource 1.6.0. I did not find the issue in 1.5.8 . <a href="https://github.com/angular/angular.js/issues/5438" target="_blank" rel="external">angular-resource.js encodeUriSegment Issue #5438</a></p>
 </blockquote>
-<ol>
-<li><h3 id="Error-ENOENT-no-such-file-or-directory-scandir-‘-node-modules-node-sass-vendor’"><a href="#Error-ENOENT-no-such-file-or-directory-scandir-‘-node-modules-node-sass-vendor’" class="headerlink" title="Error: ENOENT: no such file or directory, scandir ‘**/node_modules/node-sass/vendor’"></a>Error: ENOENT: no such file or directory, scandir ‘**/node_modules/node-sass/vendor’</h3></li>
-</ol>
-<blockquote>
+<h3 id="2-Error-ENOENT-no-such-file-or-directory-scandir-‘-node-modules-node-sass-vendor’"><a href="#2-Error-ENOENT-no-such-file-or-directory-scandir-‘-node-modules-node-sass-vendor’" class="headerlink" title="2. Error: ENOENT: no such file or directory, scandir ‘**/node_modules/node-sass/vendor’"></a>2. Error: ENOENT: no such file or directory, scandir ‘**/node_modules/node-sass/vendor’</h3><blockquote>
 <p><code>npm rebuild node-sass</code> <a href="https://github.com/sass/node-sass/issues/1579" target="_blank" rel="external">Error: ENOENT: no such file or directory, scandir ‘**/node_modules/node-sass/vendor’ #1579</a></p>
 </blockquote>
-<ol>
-<li><h3 id="高企认定工具页面刷新测试bug"><a href="#高企认定工具页面刷新测试bug" class="headerlink" title="高企认定工具页面刷新测试bug"></a>高企认定工具页面刷新测试bug</h3></li>
-</ol>
-<p>使用了SeedUI，页面的刷新逻辑是自己写的，由以下几部分组成：</p>
+<h3 id="3-高企认定工具页面刷新测试bug"><a href="#3-高企认定工具页面刷新测试bug" class="headerlink" title="3. 高企认定工具页面刷新测试bug"></a>3. 高企认定工具页面刷新测试bug</h3><p>使用了SeedUI，页面的刷新逻辑是自己写的，由以下几部分组成：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//刷新则回到第一页</div><div class="line">    if (location.href.split(&apos;#&apos;).length &gt; 1) &#123;</div><div class="line">        location.href = location.href.split(&apos;#&apos;)[0].trim();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">//初始化时，历史记录就有了，说明刷新过了</div><div class="line">            if (this.history.list.length &gt; 0) &#123;</div><div class="line">                &lt;!--console.log(&quot;刷新&quot;, this.history.list);--&gt;</div><div class="line">                document.querySelector(&quot;#intro-Section&quot;).classList.add(&quot;active&quot;);</div><div class="line">                this.history.list = [&quot;#intro&quot;];</div><div class="line">                &lt;!--console.log(&quot;刷新&quot;, this.history.list);--&gt;</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
 <p>测试工具：微信web开发者工具、android手机、chrome浏览器<br>测试目标：高企工具本地站点、高企工具测试站点<br>测试功能：任何页面刷新都会回到首页<br>结论：只有在微信中打开高企工具测试站点进行测试时，刷新后一直处于loading动画</p>
-<ol>
-<li><h3 id="git感应不到的文件夹"><a href="#git感应不到的文件夹" class="headerlink" title="git感应不到的文件夹"></a>git感应不到的文件夹</h3></li>
-</ol>
-<p>在博客仓库中，我曾经在source文件夹下新建了git仓库，然后它的父文件夹作为一个git仓库时会记录source文件夹的存在但不记录其中内容的改变（git仓库嵌套），我删除source子仓库后父仓库对其中改变无动于衷。</p>
+<h3 id="4-git感应不到的文件夹"><a href="#4-git感应不到的文件夹" class="headerlink" title="4. git感应不到的文件夹"></a>4. git感应不到的文件夹</h3><p>在博客仓库中，我曾经在source文件夹下新建了git仓库，然后它的父文件夹作为一个git仓库时会记录source文件夹的存在但不记录其中内容的改变（git仓库嵌套），我删除source子仓库后父仓库对其中改变无动于衷。</p>
 <p>解决：重命名source文件夹，提交，将文件夹名字改回source。我猜原因大概是要形成记录。</p>
-<ol>
-<li><h3 id="webstorm总是因为npm-modules崩溃"><a href="#webstorm总是因为npm-modules崩溃" class="headerlink" title="webstorm总是因为npm_modules崩溃"></a>webstorm总是因为npm_modules崩溃</h3></li>
-</ol>
-<p>通常我都是在打开项目npm install结束之后设置文件夹目录exclude，但是这样很容易在没设置之前开启项目时webstorm崩溃，然后我在想是不是有什么方式能让webstorm自动忽略npm_modules，不用每次手动exclude。<a href="http://www.cnblogs.com/chengwb/p/6183440.html" target="_blank" rel="external">答案</a></p>
-<ol>
-<li><h3 id="浏览器访问http-localhost-8080-时不加载template文件：net-ERR-BLOCKED-BY-CLIENT"><a href="#浏览器访问http-localhost-8080-时不加载template文件：net-ERR-BLOCKED-BY-CLIENT" class="headerlink" title="浏览器访问http://localhost:8080 时不加载template文件：net::ERR_BLOCKED_BY_CLIENT"></a>浏览器访问<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a> 时不加载template文件：net::ERR_BLOCKED_BY_CLIENT</h3></li>
-</ol>
-<p>装了adblocker<a href="http://stackoverflow.com/questions/23341765/getting-neterr-blocked-by-client-error-on-some-ajax-calls" target="_blank" rel="external">答案</a></p>
-<ol>
-<li><h3 id="打开vue-hackernews-2-0的js文件会报错：“are-not-supported-by-current-JavaScript-version”"><a href="#打开vue-hackernews-2-0的js文件会报错：“are-not-supported-by-current-JavaScript-version”" class="headerlink" title="打开vue-hackernews-2.0的js文件会报错：“are not supported by current JavaScript version”"></a>打开vue-hackernews-2.0的js文件会报错：“are not supported by current JavaScript version”</h3></li>
-</ol>
-<p><code>ctrl</code>+<code>alt</code>+<code>s</code>调出设置项，点击<code>Languages &amp; Frameworks</code>目录下的<code>javascript</code>，右侧选择 javascript language version</p>
-<ol>
-<li><h3 id="angular-Multiple-directives-asking-for-templates-on"><a href="#angular-Multiple-directives-asking-for-templates-on" class="headerlink" title="angular:Multiple directives asking for templates on"></a>angular:Multiple directives asking for templates on</h3></li>
-</ol>
-<p>在directive中定义了AC 然后元素attribute和class同时出现了</p>
-<ol>
-<li><h3 id="jquery-quot-quot-hasClass-与-quot-quot-0-classList-contains"><a href="#jquery-quot-quot-hasClass-与-quot-quot-0-classList-contains" class="headerlink" title="jquery:$(&quot;&quot;).hasClass() 与 $(&quot;&quot;)[0].classList.contains"></a>jquery:<code>$(&quot;&quot;).hasClass()</code> 与 <code>$(&quot;&quot;)[0].classList.contains</code></h3></li>
-</ol>
-<p><a href="http://api.jquery.com/hasClass/" target="_blank" rel="external">.hasClass()</a></p>
+<h3 id="5-webstorm总是因为npm-modules崩溃"><a href="#5-webstorm总是因为npm-modules崩溃" class="headerlink" title="5. webstorm总是因为npm_modules崩溃"></a>5. webstorm总是因为npm_modules崩溃</h3><p>通常我都是在打开项目npm install结束之后设置文件夹目录exclude，但是这样很容易在没设置之前开启项目时webstorm崩溃，然后我在想是不是有什么方式能让webstorm自动忽略npm_modules，不用每次手动exclude。<a href="http://www.cnblogs.com/chengwb/p/6183440.html" target="_blank" rel="external">答案</a></p>
+<h3 id="6-浏览器访问http-localhost-8080-时不加载template文件：net-ERR-BLOCKED-BY-CLIENT"><a href="#6-浏览器访问http-localhost-8080-时不加载template文件：net-ERR-BLOCKED-BY-CLIENT" class="headerlink" title="6. 浏览器访问http://localhost:8080 时不加载template文件：net::ERR_BLOCKED_BY_CLIENT"></a>6. 浏览器访问<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a> 时不加载template文件：net::ERR_BLOCKED_BY_CLIENT</h3><p>装了adblocker<a href="http://stackoverflow.com/questions/23341765/getting-neterr-blocked-by-client-error-on-some-ajax-calls" target="_blank" rel="external">答案</a></p>
+<h3 id="7-打开vue-hackernews-2-0的js文件会报错：“are-not-supported-by-current-JavaScript-version”"><a href="#7-打开vue-hackernews-2-0的js文件会报错：“are-not-supported-by-current-JavaScript-version”" class="headerlink" title="7. 打开vue-hackernews-2.0的js文件会报错：“are not supported by current JavaScript version”"></a>7. 打开vue-hackernews-2.0的js文件会报错：“are not supported by current JavaScript version”</h3><p><code>ctrl</code>+<code>alt</code>+<code>s</code>调出设置项，点击<code>Languages &amp; Frameworks</code>目录下的<code>javascript</code>，右侧选择 javascript language version</p>
+<h3 id="8-angular-Multiple-directives-asking-for-templates-on"><a href="#8-angular-Multiple-directives-asking-for-templates-on" class="headerlink" title="8. angular:Multiple directives asking for templates on"></a>8. angular:Multiple directives asking for templates on</h3><p>在directive中定义了AC 然后元素attribute和class同时出现了</p>
+<h3 id="9-jquery-quot-quot-hasClass-与-quot-quot-0-classList-contains"><a href="#9-jquery-quot-quot-hasClass-与-quot-quot-0-classList-contains" class="headerlink" title="9. jquery:$(&quot;&quot;).hasClass() 与 $(&quot;&quot;)[0].classList.contains"></a>9. jquery:<code>$(&quot;&quot;).hasClass()</code> 与 <code>$(&quot;&quot;)[0].classList.contains</code></h3><p><a href="http://api.jquery.com/hasClass/" target="_blank" rel="external">.hasClass()</a></p>
 
     </div>
     
