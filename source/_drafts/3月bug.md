@@ -40,7 +40,10 @@ tags:
 
 解决：重命名source文件夹，提交，将文件夹名字改回source。我猜原因大概是要形成记录。
 
+
 5. ### webstorm总是因为npm_modules崩溃
+
+`Setting -> Editor -> File types -> Ignore files and folders`
 
 通常我都是在打开项目npm install结束之后设置文件夹目录exclude，但是这样很容易在没设置之前开启项目时webstorm崩溃，然后我在想是不是有什么方式能让webstorm自动忽略npm_modules，不用每次手动exclude。[答案](http://www.cnblogs.com/chengwb/p/6183440.html)
 
@@ -51,3 +54,13 @@ tags:
 7. ### 打开vue-hackernews-2.0的js文件会报错：“are not supported by current JavaScript version”
 
 `ctrl`+`alt`+`s`调出设置项，点击`Languages & Frameworks`目录下的`javascript`，右侧选择 javascript language version
+
+8. ### hexo -v命令运行报错：cannot find module './build/release/dtraceproviderbindings
+
+首先要卸载干净hexo：选择一条与你的安装命令相匹配的卸载命令（最重要，我本地尝试了很多次第二、三步一直失败，然后我发现我每次卸载没加-g导致hexo没有卸载，因为我安装的时候是全局安装）
+    1. npm uninstall -g hexo-cli
+    2. npm uninstall -g hexo
+
+此步骤可以忽略：然后安装cnpm（当你用npm很卡的时候），运行`cnpm -v`确认你的cnpm正确安装完毕
+
+第三，执行`npm install hexo-cli -g`或者`cnpm install hexo-cli -g`（我是用的是前者），`hexo -v`没有报错则安装完毕
