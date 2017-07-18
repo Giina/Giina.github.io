@@ -2,8 +2,8 @@
 title: 5月bug
 lang: zh
 date: 2017-06-06 14:12:51
-tags:
-category:
+tags: ["bug"]
+category: bug
 ---
 
 ### 1. mobile在android浏览器和ios浏览器中体现不同

@@ -3,8 +3,9 @@ title: iconfont偏移调查
 lang: zh
 date: 2017-05-24 11:04:45
 tags:
-category:
+category: 调研
 ---
+
 ***注意***
 * 下述“字体”仅针对iconfont（阿里巴巴图标库）
 
@@ -35,3 +36,11 @@ category:
 
 #### 调查结果
 > 开发环境（chrome PC 模拟手机浏览器）与设计图一致，其余字体偏移
+
+
+
+@2017.06.07转交
+
+@2017.06.14回到我手里
+
+<script async src="//jsfiddle.net/geogia/n3q14axs/9/embed/"></script>
