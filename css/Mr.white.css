@@ -2784,6 +2784,9 @@ article .date {
 article .content {
   text-align: left;
 }
+article .content iframe {
+  min-height: 400px;
+}
 .copyright {
   padding: 0 20px;
   letter-spacing: 0.1em;
@@ -2985,6 +2988,7 @@ article .content {
   border-left-width: 10px;
   border-radius: 0 6px 6px 0;
 }
+#category .category-container:hover,
 #category .category-container:before {
   position: absolute;
   top: 50%;
