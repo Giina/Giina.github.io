@@ -22,26 +22,17 @@
         
         
         <article id="post">
-    <h1>框架&amp;插件
+    <h1>5月bug
         <hr>
     </h1>
-    <span class="date">2017-05-02</span>
+    <span class="date">2017-06-07</span>
     <div class="content markdown-body">
-        <ol>
-<li><h3 id="responsive-html-email-template"><a href="#responsive-html-email-template" class="headerlink" title="responsive-html-email-template"></a><a href="https://github.com/leemunroe/responsive-html-email-template" target="_blank" rel="external">responsive-html-email-template</a></h3></li>
-</ol>
-<ul>
-<li>css写行内比较好-&gt;email-inlined.html</li>
-</ul>
-<ol>
-<li><h3 id="Email-Boilerplate"><a href="#Email-Boilerplate" class="headerlink" title="Email-Boilerplate"></a><a href="https://github.com/seanpowell/Email-Boilerplate" target="_blank" rel="external">Email-Boilerplate</a></h3></li>
-<li><h3 id="VUX"><a href="#VUX" class="headerlink" title="VUX"></a><a href="">VUX</a></h3></li>
-<li><h3 id="MintUI"><a href="#MintUI" class="headerlink" title="MintUI"></a><a href="">MintUI</a></h3></li>
-<li><h3 id="MuseUI"><a href="#MuseUI" class="headerlink" title="MuseUI"></a><a href="">MuseUI</a></h3></li>
-<li><h3 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a><a href="">Bootstrap</a></h3></li>
-<li><h3 id="Less"><a href="#Less" class="headerlink" title="Less"></a><a href="">Less</a></h3></li>
-<li><h3 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a><a href="">Sass</a></h3></li>
-</ol>
+        <h3 id="1-mobile在android浏览器和ios浏览器中体现不同"><a href="#1-mobile在android浏览器和ios浏览器中体现不同" class="headerlink" title="1. mobile在android浏览器和ios浏览器中体现不同"></a>1. mobile在android浏览器和ios浏览器中体现不同</h3><p>令人疑惑的是之前的HTML5页面没有这种问题，只好去恶补了一下移动网页开发的相关知识</p>
+<h3 id="2-windows环境，npm-run指定外部访问"><a href="#2-windows环境，npm-run指定外部访问" class="headerlink" title="2. windows环境，npm run指定外部访问"></a>2. windows环境，npm run指定外部访问</h3><p><a href="https://github.com/nuxt/nuxt.js/pull/90" target="_blank" rel="external">Enable connecting to localhost:3000 from another computer</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//Via a env variable HOST:not work</div><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">  &quot;dev&quot;: &quot;HOST=0.0.0.0 nuxt&quot;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//Via a nuxt config in the package.json:it&apos;s work</div><div class="line">&quot;config&quot;: &#123;</div><div class="line">    &quot;nuxt&quot;: &#123;</div><div class="line">      &quot;host&quot;: &quot;0.0.0.0&quot;</div><div class="line">    &#125;</div><div class="line">&#125;,</div><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">    &quot;dev&quot;: &quot;nuxt&quot;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>同事的mac环境中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">HOST=0.0.0.0 npm run dev</div></pre></td></tr></table></figure></p>
+<h3 id="3-VUEX-gt-中间件"><a href="#3-VUEX-gt-中间件" class="headerlink" title="3. VUEX -&gt; 中间件"></a>3. VUEX -&gt; 中间件</h3><p>从其参数context的变量和方法可以看出，中间件执行结果有路由重定向和展示错误页<br>可以使用在<code>nuxt.config.js</code>或者layouts/pages中使用</p>
+<h3 id="4-bootstrap-modal-官方方法"><a href="#4-bootstrap-modal-官方方法" class="headerlink" title="4. bootstrap modal 官方方法"></a>4. bootstrap modal 官方方法</h3><p>企图在modal中实现多页面切换、给第一个页面的按钮添加了任何方法，都会导致modal隐藏</p>
 
     </div>
     
