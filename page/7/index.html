@@ -22,37 +22,18 @@
         
         
         <article id="post">
-    <h1>iconfont偏移调查
+    <h1>5月bug
         <hr>
     </h1>
-    <span class="date">2017-06-14</span>
+    <span class="date">2017-06-07</span>
     <div class="content markdown-body">
-        <p><strong><em>注意</em></strong></p>
-<ul>
-<li>下述“字体”仅针对iconfont（阿里巴巴图标库）</li>
-</ul>
-<h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>1.电脑版网页中iconfont在<strong>position:absolute</strong>情况下，不同环境中，字体向上偏移<br>2.手机版网页中iconfont在<strong>chrome pc</strong>和<strong>chrome mobile</strong>中，块位置相同，字体位置不同</p>
-<h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h3><h4 id="环境调查："><a href="#环境调查：" class="headerlink" title="环境调查："></a>环境调查：</h4><pre><code>* windows系统各种浏览器（chrome，火狐，qq浏览器，UC浏览器，360浏览器均为较新版本）
-* mac系统chrome
-</code></pre><h4 id="调查结果"><a href="#调查结果" class="headerlink" title="调查结果"></a>调查结果</h4><blockquote>
-<p>开发环境（windows系统各种浏览器）均符合设计图，其余环境出现字体偏移</p>
-<ul>
-<li>使用chrome user-agent switcher在windows上修改user-agent后显示没问题——与user-agent中mozilla平台参数无关</li>
-</ul>
-</blockquote>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
-<li>不用<code>position:absolute</code>，或者</li>
-<li>找到iconfont偏移原因</li>
-</ol>
-<h3 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h3><h4 id="环境调查：-1"><a href="#环境调查：-1" class="headerlink" title="环境调查："></a>环境调查：</h4><pre><code>* ios系统微信浏览器
-* android系统微信浏览器+手机浏览器
-* chrome PC 模拟手机浏览器（开发环境）
-</code></pre><h4 id="调查结果-1"><a href="#调查结果-1" class="headerlink" title="调查结果"></a>调查结果</h4><blockquote>
-<p>开发环境（chrome PC 模拟手机浏览器）与设计图一致，其余字体偏移</p>
-</blockquote>
-<p>@2017.06.07转交</p>
-<p>@2017.06.14回到我手里</p>
-<script async src="//jsfiddle.net/geogia/n3q14axs/9/embed/"></script>
+        <h3 id="1-mobile在android浏览器和ios浏览器中体现不同"><a href="#1-mobile在android浏览器和ios浏览器中体现不同" class="headerlink" title="1. mobile在android浏览器和ios浏览器中体现不同"></a>1. mobile在android浏览器和ios浏览器中体现不同</h3><p>令人疑惑的是之前的HTML5页面没有这种问题，只好去恶补了一下移动网页开发的相关知识</p>
+<h3 id="2-windows环境，npm-run指定外部访问"><a href="#2-windows环境，npm-run指定外部访问" class="headerlink" title="2. windows环境，npm run指定外部访问"></a>2. windows环境，npm run指定外部访问</h3><p><a href="https://github.com/nuxt/nuxt.js/pull/90" target="_blank" rel="external">Enable connecting to localhost:3000 from another computer</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//Via a env variable HOST:not work</div><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">  &quot;dev&quot;: &quot;HOST=0.0.0.0 nuxt&quot;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//Via a nuxt config in the package.json:it&apos;s work</div><div class="line">&quot;config&quot;: &#123;</div><div class="line">    &quot;nuxt&quot;: &#123;</div><div class="line">      &quot;host&quot;: &quot;0.0.0.0&quot;</div><div class="line">    &#125;</div><div class="line">&#125;,</div><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">    &quot;dev&quot;: &quot;nuxt&quot;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>同事的mac环境中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">HOST=0.0.0.0 npm run dev</div></pre></td></tr></table></figure></p>
+<h3 id="3-VUEX-gt-中间件"><a href="#3-VUEX-gt-中间件" class="headerlink" title="3. VUEX -&gt; 中间件"></a>3. VUEX -&gt; 中间件</h3><p>从其参数context的变量和方法可以看出，中间件执行结果有路由重定向和展示错误页<br>可以使用在<code>nuxt.config.js</code>或者layouts/pages中使用</p>
+<h3 id="4-bootstrap-modal-官方方法"><a href="#4-bootstrap-modal-官方方法" class="headerlink" title="4. bootstrap modal 官方方法"></a>4. bootstrap modal 官方方法</h3><p>企图在modal中实现多页面切换、给第一个页面的按钮添加了任何方法，都会导致modal隐藏</p>
+
     </div>
     
     <br/>
