@@ -22,19 +22,37 @@
         
         
         <article id="post">
-    <h1>4月bug
+    <h1>iconfont偏移调查
         <hr>
     </h1>
-    <span class="date">2017-05-09</span>
+    <span class="date">2017-06-14</span>
     <div class="content markdown-body">
-        <h3 id="1-Nuxj-bootstrap-jquery-is-not-defined"><a href="#1-Nuxj-bootstrap-jquery-is-not-defined" class="headerlink" title="1. Nuxj+bootstrap: jquery is not defined"></a>1. Nuxj+bootstrap: jquery is not defined</h3><p><a href="https://github.com/nuxt/nuxt.js/issues/178" target="_blank" rel="external">官方github issue</a></p>
-<h3 id="2-inline-block元素有间距"><a href="#2-inline-block元素有间距" class="headerlink" title="2. inline-block元素有间距"></a>2. inline-block元素有间距</h3><p><a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">去除inline-block元素间间距的N种方法</a></p>
-<h3 id="3-vue-when-I-use-array-to-bind-a-class-like-class-quot-active-array-3-quot-UI-refreshes-very-slow"><a href="#3-vue-when-I-use-array-to-bind-a-class-like-class-quot-active-array-3-quot-UI-refreshes-very-slow" class="headerlink" title="3. vue when I use array to bind a class like :class=&quot;{active:array[3]}&quot;, UI refreshes very slow"></a>3. vue when I use array to bind a class like <code>:class=&quot;{active:array[3]}&quot;</code>, UI refreshes very slow</h3><h3 id="4-‘-’-is-not-defined-no-undef"><a href="#4-‘-’-is-not-defined-no-undef" class="headerlink" title="4. ‘$’ is not defined no-undef"></a>4. ‘$’ is not defined no-undef</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> ERROR  Failed to compile with 1 errors                         11:26:18</div><div class="line"></div><div class="line"> error  in ./pages/technologies/index.vue</div><div class="line"></div><div class="line">E:\Project\MetaLab2\maikeji_v6_front_mobile\pages\technologies\index.vue</div><div class="line">  89:11  error  &apos;$&apos; is not defined       no-undef</div><div class="line">  90:17  error  &apos;$&apos; is not defined       no-undef</div><div class="line">  90:43  error  &apos;$&apos; is not defined       no-undef</div><div class="line">  91:15  error  &apos;$&apos; is not defined       no-undef</div><div class="line">  93:15  error  &apos;$&apos; is not defined       no-undef</div><div class="line"></div><div class="line">✖ 6 problems (6 errors, 0 warnings)</div></pre></td></tr></table></figure>
-<p><a href="https://github.com/SimulatedGREG/electron-vue/issues/36" target="_blank" rel="external">answer</a><br>It looks like you got everything setup properly. The error you are receiving is from ESLint’s no-undef rule. Since jQuery uses the global variable $ or jQuery, ESLint needs to be configured to know about it. Within your .eslintrc.js file, add them to globals.</p>
-<p>.eslintrc.js (docs)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  // Other configs...</div><div class="line">  &quot;globals&quot;: &#123;</div><div class="line">    &quot;$&quot;: true,</div><div class="line">    &quot;jQuery&quot;: true</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>区分问题1和4</p>
-
+        <p><strong><em>注意</em></strong></p>
+<ul>
+<li>下述“字体”仅针对iconfont（阿里巴巴图标库）</li>
+</ul>
+<h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>1.电脑版网页中iconfont在<strong>position:absolute</strong>情况下，不同环境中，字体向上偏移<br>2.手机版网页中iconfont在<strong>chrome pc</strong>和<strong>chrome mobile</strong>中，块位置相同，字体位置不同</p>
+<h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h3><h4 id="环境调查："><a href="#环境调查：" class="headerlink" title="环境调查："></a>环境调查：</h4><pre><code>* windows系统各种浏览器（chrome，火狐，qq浏览器，UC浏览器，360浏览器均为较新版本）
+* mac系统chrome
+</code></pre><h4 id="调查结果"><a href="#调查结果" class="headerlink" title="调查结果"></a>调查结果</h4><blockquote>
+<p>开发环境（windows系统各种浏览器）均符合设计图，其余环境出现字体偏移</p>
+<ul>
+<li>使用chrome user-agent switcher在windows上修改user-agent后显示没问题——与user-agent中mozilla平台参数无关</li>
+</ul>
+</blockquote>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
+<li>不用<code>position:absolute</code>，或者</li>
+<li>找到iconfont偏移原因</li>
+</ol>
+<h3 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h3><h4 id="环境调查：-1"><a href="#环境调查：-1" class="headerlink" title="环境调查："></a>环境调查：</h4><pre><code>* ios系统微信浏览器
+* android系统微信浏览器+手机浏览器
+* chrome PC 模拟手机浏览器（开发环境）
+</code></pre><h4 id="调查结果-1"><a href="#调查结果-1" class="headerlink" title="调查结果"></a>调查结果</h4><blockquote>
+<p>开发环境（chrome PC 模拟手机浏览器）与设计图一致，其余字体偏移</p>
+</blockquote>
+<p>@2017.06.07转交</p>
+<p>@2017.06.14回到我手里</p>
+<script async src="//jsfiddle.net/geogia/n3q14axs/9/embed/"></script>
     </div>
     
     <br/>
