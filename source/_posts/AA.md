@@ -2,8 +2,8 @@
 title: AA
 lang: zh
 date: 2017-08-04 11:29:52
-tags:
-category: 工具
+tags: ['工具']
+category: '脑洞'
 ---
 > 谢谢大家耐心使用~
 即将推出小程序版，敬请期待
