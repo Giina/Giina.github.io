@@ -2988,7 +2988,6 @@ article .content iframe {
   border-left-width: 10px;
   border-radius: 0 6px 6px 0;
 }
-#category .category-container:hover,
 #category .category-container:before {
   position: absolute;
   top: 50%;

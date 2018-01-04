@@ -22,7 +22,7 @@
     <h1>精确ip定位调研
         <hr>
     </h1>
-    <span class="date">2017-02-17</span>
+    <span class="date">2017-09-06</span>
     <div class="content markdown-body">
         <p>调研目标：高精度ip定位（精确到直辖市的各个区）<br>调研流程：搜索现有服务商 -&gt; 试用服务 -&gt; 生成报告<br>调研标准：服务质量（速度，稳定，客服反馈），服务价格，口碑</p>
 <h3 id="1-百度高精度ip定位"><a href="#1-百度高精度ip定位" class="headerlink" title="1. 百度高精度ip定位"></a>1. <a href="http://bbs.lbsyun.baidu.com/forum.php?mod=viewthread&amp;tid=123916&amp;highlight=%E9%AB%98%E7%B2%BE%E5%BA%A6IP" target="_blank" rel="external">百度高精度ip定位</a></h3><p>百度咨询回复内容：</p>
@@ -45,6 +45,55 @@
 </ul>
 <p>根据需求，年费为2.5万元/年不限次数使用</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>根据网站首页省市定位的需求，建议使用2号服务。</p>
+<h3 id="精确IP定位的实现"><a href="#精确IP定位的实现" class="headerlink" title="精确IP定位的实现"></a>精确IP定位的实现</h3><p>从一个前端的角度想要实现精准IP定位，调用接口的时候势必会暴露自己的APPKey。等我发现这一点的时候我的APPKey其实已经暴露了好几个月，有点庆幸没有人抱着恶意访问网站。因此，精准IP定位的接口工作交给了后端的同事，API说明文档如下：</p>
+<blockquote>
+<p>ip_location:</p>
+<p>直辖市请求接口： <a href="https://way.jd.com/RTBAsia/ip_district?ip=查询的IP地址&amp;appkey=RTBAisa购买所得APPKey" target="_blank" rel="external">https://way.jd.com/RTBAsia/ip_district?ip=查询的IP地址&amp;appkey=RTBAisa购买所得APPKey</a><br>接口说明文档地址：<a href="https://wx.jcloud.com/market/api/10366" target="_blank" rel="external">https://wx.jcloud.com/market/api/10366</a><br>注意：该地区返回行政区号需要查询行政区号字典，在浏览器中访问<a href="https://way.jd.com/RTBAsia/dictionary_district?appkey=c25bfe7445f025e295f73668687051cc" target="_blank" rel="external">https://way.jd.com/RTBAsia/dictionary_district?appkey=c25bfe7445f025e295f73668687051cc</a> 改地址能够得到字典内容，该接口说明文档为<a href="https://wx.jcloud.com/market/datas/18/10367" target="_blank" rel="external">https://wx.jcloud.com/market/datas/18/10367</a></p>
+<p>一般地址请求接口： <a href="http://restapi.amap.com/v3/ip?key=高德地图创建的接口APPKey&amp;ip=查询的IP地址" target="_blank" rel="external">http://restapi.amap.com/v3/ip?key=高德地图创建的接口APPKey&amp;ip=查询的IP地址</a><br>接口说明文档地址：<a href="http://lbs.amap.com/api/webservice/guide/api/ipconfig/#ip" target="_blank" rel="external">http://lbs.amap.com/api/webservice/guide/api/ipconfig/#ip</a></p>
+<p>接口返回结果参数说明：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>示例值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>province</td>
+<td>string</td>
+<td>‘浙江省’/‘上海市’</td>
+<td>省份/直辖市名称</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>‘杭州市’/‘杨浦区’</td>
+<td>城市/区域名称</td>
+</tr>
+<tr>
+<td>isMunicipality</td>
+<td>boolean</td>
+<td>True / False</td>
+<td>是否是直辖市</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>返回结果状态值</td>
+<td>值为0或1,0表示失败；1表示成功</td>
+</tr>
+<tr>
+<td>info</td>
+<td>string</td>
+<td>返回状态说明</td>
+<td>返回状态说明，status为0时，info返回错误原因，否则返回“OK”。</td>
+</tr>
+</tbody>
+</table>
 
     </div>
     
@@ -62,7 +111,7 @@
     <hr>
     <nav id="pagination" class="menu">
     
-    <a href="/zh/2017-04/3月bug/" title="3月bug" class="prev">&larr; next</a>
+    <a href="/zh/2017-04/3月工作/" title="3月bug" class="prev">&larr; next</a>
     
 
     <!-- 导航模块 -->
@@ -74,7 +123,7 @@
 </nav>
 
     
-    <a href="/zh/2017-02/2月bug/" title="2月bug" class="next">prev &rarr;</a>
+    <a href="/zh/2017-02/2月工作/" title="2月bug" class="next">prev &rarr;</a>
     
 </nav>
     <!-- 声明模块 -->
