@@ -22,18 +22,25 @@
         
         
         <article id="post">
-    <h1>AA酱诞生之旅
+    <h1>简单视频播放实现
         <hr>
     </h1>
-    <span class="date">2017-09-06</span>
+    <span class="date">2018-01-04</span>
     <div class="content markdown-body">
-        <p>近几天写了一个AA的微信小程序，老实讲，小程序的入口很不方便、AA酱的使用情况也不是很乐观，但我还是凭着一股热血（主要是AA酱很简单的代码行）把他从jsfiddle升级到了微信小程序。<br>下面就来讲讲开发的过程吧。</p>
-<h2 id="1-前身"><a href="#1-前身" class="headerlink" title="1. 前身"></a>1. 前身</h2><pre><code>说道AA酱，不得不介绍一下他的前身[AA网页版](http://blog.janeis.win/zh/2017-08/AA/)。在办公室小伙伴和我齐心协力支持饿了么、美团外卖等宅一族软件的时候，没到算账的时候就十分头疼——各种满减、运费、包装费之后，我们应该给付账的老板多少钱呢？
-</code></pre><p>在一次次的计算中，我们发现了一种较为公平的算法——也就是AA酱的算法啦，其实很简单我就不做介绍了。</p>
-<h2 id="2-诞生日"><a href="#2-诞生日" class="headerlink" title="2.诞生日"></a>2.诞生日</h2><pre><code>AA诞生后不久（1-2个月），我在常去的折扣论坛上发布了一篇折扣相关的帖子并在其中用AA做了相关的折扣运算（和满减什么的算法是相同的），于是我拥有了一帮测试人员~在此鞠躬感谢论坛的伙伴们！有几个反馈说道可以做成小程序，便于保存和使用、还能有更好的体验。要知道微信发布小程序之后，我眼红了好久都没有下手、现在有这么名正言顺的机会（吐槽：这个其实不需要什么理由，想做就做）主要是有人顶我于是我就开始开发了。
-</code></pre><h2 id="3-更新迭代"><a href="#3-更新迭代" class="headerlink" title="3.更新迭代"></a>3.更新迭代</h2><pre><code>目前AA酱已经通过初步测试，第一版也正在审核中。说真的，触屏的使用习惯和网页真的很不同，所以在照抄AA网页的时候也是各种不顺。好在设计师Y给我指了一条明路~AA酱的颜值也上升了很多等级。只要微信通过审核，很快就会和大家见面的！
-</code></pre><h2 id="0-题外话：微信小程序开发"><a href="#0-题外话：微信小程序开发" class="headerlink" title="0.题外话：微信小程序开发"></a>0.题外话：微信小程序开发</h2><pre><code>微信小程序的开发语言类似VUE，是很容易理解和使用的开发方式。很是值得琢磨。
-</code></pre>
+        <p>参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video" target="_blank" rel="external">MDN:video</a></p>
+<h3 id="手机版功能说明"><a href="#手机版功能说明" class="headerlink" title="手机版功能说明"></a>手机版功能说明</h3><ol>
+<li>显示封面，点击播放（不要预先加载）</li>
+<li>无下载按钮</li>
+<li>可以全屏+控制播放进度</li>
+</ol>
+<h3 id="技能点"><a href="#技能点" class="headerlink" title="技能点"></a>技能点</h3><ol>
+<li>html 5 <code>&lt;video&gt;</code>标签</li>
+<li>去掉video的下载按钮</li>
+<li>poster字段设置封面</li>
+<li>preload字段设置不要预加载</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;video class=&quot;cover&quot; src=&quot;http://www.w3school.com.cn/i/movie.ogg&quot;</div><div class="line">       poster=&quot;http://www.w3school.com.cn/i/eg_tulip.jpg&quot; controls preload=&quot;none&quot;&gt;</div><div class="line">啊！显示不了...</div><div class="line">&lt;/video&gt;</div><div class="line"></div><div class="line">&lt;style&gt;</div><div class="line">video::-internal-media-controls-download-button &#123;</div><div class="line">  display:none;</div><div class="line">&#125;</div><div class="line">video::-webkit-media-controls-enclosure &#123;</div><div class="line">  overflow:hidden;</div><div class="line">&#125;</div><div class="line">video::-webkit-media-controls-panel &#123;</div><div class="line">  width: calc(100% + 6rem);</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+
     </div>
     
     <br/>

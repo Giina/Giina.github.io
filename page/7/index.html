@@ -22,15 +22,24 @@
         
         
         <article id="post">
-    <h1>7月
+    <h1>吃货日记
         <hr>
     </h1>
-    <span class="date">2018-01-04</span>
+    <span class="date">2017-09-06</span>
     <div class="content markdown-body">
-        <p>1.vue-sweetalert + nuxtjs<br>在nuxt中使用第三方插件的时候，引入之后有时候会有<code>document is not defined</code>或者<code>window is not defined</code>，<br><a href="https://nuxtjs.org/faq/window-document-undefined/#window-or-document-undefined-" target="_blank" rel="external">官方答案</a><br>参考上述官方答案还是解决不了我的问题，于是就去github的issue里面找、使用说明里面找。结合我找到的内容，下面才是正解：<br><a href="https://zh.nuxtjs.org/guide/plugins/#只在浏览器里使用的插件" target="_blank" rel="external">官方教程</a><br>可以不看的：<a href="https://github.com/nuxt/nuxt.js/issues/30" target="_blank" rel="external">翻了很久才找到的issue</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  plugins: [</div><div class="line">    &#123; src: &apos;~plugins/vue-notifications&apos;, ssr: false &#125;</div><div class="line">  ]</div><div class="line">&#125;</div><div class="line">// 就是ssr:false这个参数配置啦，这样表示配置插件只从客户端运行</div></pre></td></tr></table></figure>
-<p>2个月前倔强不肯好好看文档的我的脸现在很痛。</p>
-
+        <p><a href="http://chishenme.huangyafei.com/?dt_dapp=1&amp;dt_ref=02B380E3F459AA448E530105625086E92421422647D7FC5EEA84DFE4F27E5C94858266E9201553A5" target="_blank" rel="external">吃什么</a><br>大众点评、黄油相机<br>受到上述工具/APP的启发，我想做一款为吃货服务的APP。</p>
+<h3 id="1-目标人群：喜欢吃、喜欢晒吃、不知道吃什么的人"><a href="#1-目标人群：喜欢吃、喜欢晒吃、不知道吃什么的人" class="headerlink" title="1.目标人群：喜欢吃、喜欢晒吃、不知道吃什么的人"></a>1.目标人群：喜欢吃、喜欢晒吃、不知道吃什么的人</h3><h3 id="2-功能："><a href="#2-功能：" class="headerlink" title="2.功能："></a>2.功能：</h3><p>根据上述目标人群，针对喜欢吃的人提供美食照片社区、供他挑选；针对喜欢晒吃的人提供美食滤镜、美食拍摄教程让他晒出更好看的美食照片；针对不知道吃什么的人、根据他上传的美食日记提供随机/分析后的美食选择</p>
+<h3 id="3-盈利点："><a href="#3-盈利点：" class="headerlink" title="3.盈利点："></a>3.盈利点：</h3><ul>
+<li><p>美食照片稿费</p>
+</li>
+<li><p>商家合作推荐</p>
+</li>
+<li><p>外卖合作</p>
+</li>
+<li><p>网购商城</p>
+</li>
+</ul>
+<h3 id="就差开发人员了！"><a href="#就差开发人员了！" class="headerlink" title="就差开发人员了！"></a>就差开发人员了！</h3>
     </div>
     
     <br/>
