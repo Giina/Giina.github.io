@@ -22,14 +22,33 @@
         
         
         <article id="post">
-    <h1>8月
+    <h1>2月
         <hr>
     </h1>
-    <span class="date">2018-02-01</span>
+    <span class="date">2018-02-23</span>
     <div class="content markdown-body">
-        <ol>
-<li><a href="https://stackoverflow.com/questions/24721903/npm-cli-js-not-found-when-running-npm" target="_blank" rel="external">npm-cli.js not found when running npm</a></li>
+        <h3 id="1-promise出错处理"><a href="#1-promise出错处理" class="headerlink" title="1. promise出错处理"></a>1. promise出错处理</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="external">MDN Promise</a></p>
+<blockquote>
+<p>Promise.prototype.catch(onRejected)<br>添加一个拒绝(rejection) 回调到当前 promise, 返回一个新的promise。当这个回调函数被调用，新 promise 将以它的返回值来resolve，否则如果当前promise 进入fulfilled状态，则以当前promise的完成结果作为新promise的完成结果.<br>Promise.prototype.then(onFulfilled, onRejected)<br>添加解决(fulfillment)和拒绝(rejection)回调到当前 promise, 返回一个新的 promise, 将以回调的返回值来resolve.</p>
+</blockquote>
+<p><a href="http://www.uedsc.com/296729.html" target="_blank" rel="external">Promise的错误处理</a></p>
+<blockquote>
+<p>promise.then 方法接收两个回调函数为参数，其中第一个为成功回调函数，第二个为失败回调函数，需要注意的是<br>  这儿的两个回调函数基于promsie这个 Promise 实例的处理结果的<br>  catch 很方便的解决了我们对于多级 Promise 处理的问题，那对于一些忘记加或者无法加 catch<br>  的情况怎么处理呢？庆幸的是 API 的设计者们又为我们这些应用开发者想好了，有一个全局的事情叫<br>  unhandledRejection</p>
+</blockquote>
+<h3 id="2-git-rebase-合并多个commit"><a href="#2-git-rebase-合并多个commit" class="headerlink" title="2. git rebase:合并多个commit"></a>2. git rebase:合并多个commit</h3><p><a href="https://www.cnblogs.com/wangiqngpei557/p/5989292.html" target="_blank" rel="external">聊下 git rebase -i</a><br>    git reabse –i type_branch_compared<br>    pick -&gt; squash<br>    :wq<br>    fix some conflicts(may not happen)<br>    git rebase –continue<br>    change log</p>
+<p><a href="http://git.oschina.net/progit/index.html" target="_blank" rel="external">Pro Git</a></p>
+<h3 id="3-in-package-json"><a href="#3-in-package-json" class="headerlink" title="3. ^, ~ in package.json"></a>3. ^, ~ in package.json</h3><p><a href="https://docs.npmjs.com/misc/semver#x-ranges-12x-1x-12-" target="_blank" rel="external">官方文档</a></p>
+<h3 id="4-微信浏览器视频顶层播放"><a href="#4-微信浏览器视频顶层播放" class="headerlink" title="4. 微信浏览器视频顶层播放"></a>4. 微信浏览器视频顶层播放</h3><p><a href="http://blog.csdn.net/qq_22557797/article/details/66973548?winzoom=1" target="_blank" rel="external">x5-video-player-type=’h5’</a></p>
+<h3 id="5-网页接口请求阻塞-stalled-时间过长"><a href="#5-网页接口请求阻塞-stalled-时间过长" class="headerlink" title="5. 网页接口请求阻塞(stalled)时间过长"></a>5. 网页接口请求阻塞(stalled)时间过长</h3><p>chrome最大同源请求数是6</p>
+<blockquote>
+<p><a href="http://blog.csdn.net/tianhouquan/article/details/78803601" target="_blank" rel="external">相同情况</a><br><a href="https://stackoverflow.com/questions/985431/max-parallel-http-connections-in-a-browser" target="_blank" rel="external">各浏览器最大同源请求数</a></p>
+</blockquote>
+<h3 id="6-webstorm开机启动"><a href="#6-webstorm开机启动" class="headerlink" title="6. webstorm开机启动"></a>6. webstorm开机启动</h3><ol>
+<li>将快捷方式拖入<code>开始&gt;启动</code>（失败，怀疑原因：webstorm启动和目录中其他文件有关系）</li>
+<li>start today.bat<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">echo HELLO</div><div class="line"></div><div class="line">echo WEBSTORM START</div><div class="line">start /d &quot;C:\Program Files\JetBrains\WebStorm 2017.3.4\bin&quot; webstorm64.exe</div><div class="line"></div><div class="line">echo CHROME START</div><div class="line">start /d &quot;C:\Program Files (x86)\Google\Chrome\Application&quot; chrome.exe</div><div class="line"></div><div class="line">exit</div></pre></td></tr></table></figure>
+</li>
 </ol>
+<h3 id="7-git-bash-安装本地npm-tgz的时候报错-Error-EPERM-operation-not-permitted"><a href="#7-git-bash-安装本地npm-tgz的时候报错-Error-EPERM-operation-not-permitted" class="headerlink" title="7. git bash 安装本地npm.tgz的时候报错 Error: EPERM: operation not permitted"></a>7. git bash 安装本地npm.tgz的时候报错 Error: EPERM: operation not permitted</h3><p>win+r -&gt; 打开cmd -&gt; 进目录安装</p>
 
     </div>
     

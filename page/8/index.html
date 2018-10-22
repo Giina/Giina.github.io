@@ -22,18 +22,35 @@
         
         
         <article id="post">
-    <h1>AA酱诞生之旅
+    <h1>监控视频播放粗糙demo制作过程
         <hr>
     </h1>
-    <span class="date">2017-09-06</span>
+    <span class="date">2018-02-01</span>
     <div class="content markdown-body">
-        <p>近几天写了一个AA的微信小程序，老实讲，小程序的入口很不方便、AA酱的使用情况也不是很乐观，但我还是凭着一股热血（主要是AA酱很简单的代码行）把他从jsfiddle升级到了微信小程序。<br>下面就来讲讲开发的过程吧。</p>
-<h2 id="1-前身"><a href="#1-前身" class="headerlink" title="1. 前身"></a>1. 前身</h2><pre><code>说道AA酱，不得不介绍一下他的前身[AA网页版](http://blog.janeis.win/zh/2017-08/AA/)。在办公室小伙伴和我齐心协力支持饿了么、美团外卖等宅一族软件的时候，没到算账的时候就十分头疼——各种满减、运费、包装费之后，我们应该给付账的老板多少钱呢？
-</code></pre><p>在一次次的计算中，我们发现了一种较为公平的算法——也就是AA酱的算法啦，其实很简单我就不做介绍了。</p>
-<h2 id="2-诞生日"><a href="#2-诞生日" class="headerlink" title="2.诞生日"></a>2.诞生日</h2><pre><code>AA诞生后不久（1-2个月），我在常去的折扣论坛上发布了一篇折扣相关的帖子并在其中用AA做了相关的折扣运算（和满减什么的算法是相同的），于是我拥有了一帮测试人员~在此鞠躬感谢论坛的伙伴们！有几个反馈说道可以做成小程序，便于保存和使用、还能有更好的体验。要知道微信发布小程序之后，我眼红了好久都没有下手、现在有这么名正言顺的机会（吐槽：这个其实不需要什么理由，想做就做）主要是有人顶我于是我就开始开发了。
-</code></pre><h2 id="3-更新迭代"><a href="#3-更新迭代" class="headerlink" title="3.更新迭代"></a>3.更新迭代</h2><pre><code>目前AA酱已经通过初步测试，第一版也正在审核中。说真的，触屏的使用习惯和网页真的很不同，所以在照抄AA网页的时候也是各种不顺。好在设计师Y给我指了一条明路~AA酱的颜值也上升了很多等级。只要微信通过审核，很快就会和大家见面的！
-</code></pre><h2 id="0-题外话：微信小程序开发"><a href="#0-题外话：微信小程序开发" class="headerlink" title="0.题外话：微信小程序开发"></a>0.题外话：微信小程序开发</h2><pre><code>微信小程序的开发语言类似VUE，是很容易理解和使用的开发方式。很是值得琢磨。
-</code></pre>
+        <h2 id="PlayCtrl-dll"><a href="#PlayCtrl-dll" class="headerlink" title="PlayCtrl.dll"></a>PlayCtrl.dll</h2><ol>
+<li>What is PlayCtrl.dll?<br>软解码库组件（windows），主要用于对实时码流数据进行解码显示（预览功能）和对录像文件进行<code>回放解码</code>等。</li>
+<li>Why is PlayCtrl.dll?<br>项目需求：海康威视监控产品保存的录像格式需要特定的SDK才能解码播放。</li>
+<li>How to use?<br><code>Attention</code>本段内容仅关注录像播放，无任何复杂功能。</li>
+</ol>
+<h3 id="step1：封装API"><a href="#step1：封装API" class="headerlink" title="step1：封装API"></a>step1：封装API</h3><p>官方提供了C++的动态链接库(Dynamic-Link Library)，第一步就是用C#类来封装其中的方法，以供用户使用。</p>
+<blockquote>
+<p>A dynamic-link library (DLL) is a module that contains functions and data that can be used by another module (application or DLL).<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms682589(v=vs.85" target="_blank" rel="external">[see more]</a>.aspx)</p>
+</blockquote>
+<p>基本用法如下：<br>    c++ 头文件中的定义：<br>    NPD_API int   NP_Init();<br>    C#中定义函数<br>    [DllImport(“npd_api.dll”)]<br>    public static extern int NP_Init();<br><a href="http://www.cnblogs.com/wdysunflower/archive/2010/09/01/1813947.html" target="_blank" rel="external">[see more:前辈经验]</a><br><a href="http://www.cnblogs.com/dashouqianxiaoshou/p/3953312.html" target="_blank" rel="external">[使用实例1-胡双挺]</a><br><a href="http://www.cnblogs.com/over140/archive/2010/03/12/1683973.html" target="_blank" rel="external">[使用实例2-农民伯伯]</a></p>
+<h3 id="step2：简单粗糙的界面"><a href="#step2：简单粗糙的界面" class="headerlink" title="step2：简单粗糙的界面"></a>step2：简单粗糙的界面</h3><p>只是为了测试播放，所以界面简单而粗糙。我在Winform和WPF中分别尝试了一下：</p>
+<ul>
+<li><p>###Winform<br>pictureBox + openFileDialog + button<br><img src="http://ww2.sinaimg.cn/large/0063MPrKjw1erua6gzu2ej308f08ezkk.jpg" alt="如图"></p>
+</li>
+<li><p>###WPF<br>在这里遇到了两个问题：</p>
+<ul>
+<li><a href="http://bbs.csdn.net/topics/390363911" target="_blank" rel="external">WPF中获得句柄问题</a></li>
+<li><a href="http://q.cnblogs.com/q/45220/" target="_blank" rel="external">AllowsTransparency与win32控件冲突</a>、<a href="https://social.msdn.microsoft.com/Forums/zh-CN/60be586b-f7c1-4191-a578-756bc6707977/wpfdirectshow?forum=wpfzhchs" target="_blank" rel="external">关于WPF用DirectShow做视频播放问题</a>、<a href="https://social.msdn.microsoft.com/Forums/zh-CN/3ac7f98c-e128-4c84-9138-e5d8d51904fc/how-to-avoid-airspace-problem-wpf-with-winforms-control?forum=wpf" target="_blank" rel="external">How to avoid Airspace problem</a>、<a href="http://blog.csdn.net/yangyy9611/article/details/17464133" target="_blank" rel="external">WPF下YUV播放的D3D解决方案</a></li>
+</ul>
+</li>
+</ul>
+<p>界面代码请自行百度：wpf picturebox</p>
+<h3 id="step3：两行代码搞定播放"><a href="#step3：两行代码搞定播放" class="headerlink" title="step3：两行代码搞定播放"></a>step3：两行代码搞定播放</h3><p><code>PlayM4_OpenFile()</code>、<code>PlayM4_Play()</code></p>
+
     </div>
     
     <br/>
