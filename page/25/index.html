@@ -22,82 +22,37 @@
         
         
         <article id="post">
-    <h1>精确ip定位调研
+    <h1>iconfont偏移调查
         <hr>
     </h1>
     <span class="date">2018-10-22</span>
     <div class="content markdown-body">
-        <p>调研目标：高精度ip定位（精确到直辖市的各个区）<br>调研流程：搜索现有服务商 -&gt; 试用服务 -&gt; 生成报告<br>调研标准：服务质量（速度，稳定，客服反馈），服务价格，口碑</p>
-<h3 id="1-百度高精度ip定位"><a href="#1-百度高精度ip定位" class="headerlink" title="1. 百度高精度ip定位"></a>1. <a href="http://bbs.lbsyun.baidu.com/forum.php?mod=viewthread&amp;tid=123916&amp;highlight=%E9%AB%98%E7%B2%BE%E5%BA%A6IP" target="_blank" rel="external">百度高精度ip定位</a></h3><p>百度咨询回复内容：</p>
-<blockquote>
-<p>因为这个接口能够在用户不知情的情况下获取用户的定位。会涉及到隐私，这块在国家政策上有些敏感。何时启用目前并没有排期，不好意思。</p>
-<p>关于高精度IP定位服务，之前我们内部做了一些调整，目前已经不公开对外发布了。<br>但是会根据重点合作伙伴的需求情况，在签订合作协议，保证数据安全的基础之上，对外提供服务使用。<br>你们需要高精度IP定位服务，请问你们的具体使用场景是什么？每天的使用量级会是多少？</p>
-</blockquote>
-<p>百度回复速度过慢，是否需要发送合作需求至相关邮箱？</p>
-<h3 id="2-RTBAisa·IP地址区县级归属地"><a href="#2-RTBAisa·IP地址区县级归属地" class="headerlink" title="2. RTBAisa·IP地址区县级归属地"></a>2. <a href="http://www.rtbasia.com/" target="_blank" rel="external">RTBAisa·IP地址区县级归属地</a></h3><p><a href="http://wx.jcloud.com/market/api/10366" target="_blank" rel="external">测试API</a></p>
-<p>18元/20000次，188元/30万次，5888元/5千万次</p>
-<h3 id="3-IPIP-NET"><a href="#3-IPIP-NET" class="headerlink" title="3. IPIP.NET"></a>3. <a href="https://www.ipip.net/price.html" target="_blank" rel="external">IPIP.NET</a></h3><p>IP数据库区县级精度版价格为3.6万/年，<a href="https://www.ipip.net/price.html#ip_district" target="_blank" rel="external">查看更多</a><br>且说明中建议配合地级市IP数据库联合使用。<br>客户服务较广。</p>
-<h3 id="4-互联网IP地理信息标准库"><a href="#4-互联网IP地理信息标准库" class="headerlink" title="4. 互联网IP地理信息标准库"></a>4. <a href="http://iac-i.org/" target="_blank" rel="external">互联网IP地理信息标准库</a></h3><ul>
-<li>A类： 基础IP库15,000元/年；</li>
-<li>B类：<ul>
-<li>移动IP库：10,000元/年</li>
-<li>区县IP库：10,000元/年</li>
-<li>高校IP库：5,000元/年</li>
+        <p><strong><em>注意</em></strong></p>
+<ul>
+<li>下述“字体”仅针对iconfont（阿里巴巴图标库）</li>
 </ul>
-</li>
+<h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>1.电脑版网页中iconfont在<strong>position:absolute</strong>情况下，不同环境中，字体向上偏移<br>2.手机版网页中iconfont在<strong>chrome pc</strong>和<strong>chrome mobile</strong>中，块位置相同，字体位置不同</p>
+<h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h3><h4 id="环境调查："><a href="#环境调查：" class="headerlink" title="环境调查："></a>环境调查：</h4><pre><code>* windows系统各种浏览器（chrome，火狐，qq浏览器，UC浏览器，360浏览器均为较新版本）
+* mac系统chrome
+</code></pre><h4 id="调查结果"><a href="#调查结果" class="headerlink" title="调查结果"></a>调查结果</h4><blockquote>
+<p>开发环境（windows系统各种浏览器）均符合设计图，其余环境出现字体偏移</p>
+<ul>
+<li>使用chrome user-agent switcher在windows上修改user-agent后显示没问题——与user-agent中mozilla平台参数无关</li>
 </ul>
-<p>根据需求，年费为2.5万元/年不限次数使用</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>根据网站首页省市定位的需求，建议使用2号服务。</p>
-<h3 id="精确IP定位的实现"><a href="#精确IP定位的实现" class="headerlink" title="精确IP定位的实现"></a>精确IP定位的实现</h3><p>从一个前端的角度想要实现精准IP定位，调用接口的时候势必会暴露自己的APPKey。等我发现这一点的时候我的APPKey其实已经暴露了好几个月，有点庆幸没有人抱着恶意访问网站。因此，精准IP定位的接口工作交给了后端的同事，API说明文档如下：</p>
-<blockquote>
-<p>ip_location:</p>
-<p>直辖市请求接口： <a href="https://way.jd.com/RTBAsia/ip_district?ip=查询的IP地址&amp;appkey=RTBAisa购买所得APPKey" target="_blank" rel="external">https://way.jd.com/RTBAsia/ip_district?ip=查询的IP地址&amp;appkey=RTBAisa购买所得APPKey</a><br>接口说明文档地址：<a href="https://wx.jcloud.com/market/api/10366" target="_blank" rel="external">https://wx.jcloud.com/market/api/10366</a><br>注意：该地区返回行政区号需要查询行政区号字典，在浏览器中访问<a href="https://way.jd.com/RTBAsia/dictionary_district?appkey=c25bfe7445f025e295f73668687051cc" target="_blank" rel="external">https://way.jd.com/RTBAsia/dictionary_district?appkey=c25bfe7445f025e295f73668687051cc</a> 改地址能够得到字典内容，该接口说明文档为<a href="https://wx.jcloud.com/market/datas/18/10367" target="_blank" rel="external">https://wx.jcloud.com/market/datas/18/10367</a></p>
-<p>一般地址请求接口： <a href="http://restapi.amap.com/v3/ip?key=高德地图创建的接口APPKey&amp;ip=查询的IP地址" target="_blank" rel="external">http://restapi.amap.com/v3/ip?key=高德地图创建的接口APPKey&amp;ip=查询的IP地址</a><br>接口说明文档地址：<a href="http://lbs.amap.com/api/webservice/guide/api/ipconfig/#ip" target="_blank" rel="external">http://lbs.amap.com/api/webservice/guide/api/ipconfig/#ip</a></p>
-<p>接口返回结果参数说明：</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>示例值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>province</td>
-<td>string</td>
-<td>‘浙江省’/‘上海市’</td>
-<td>省份/直辖市名称</td>
-</tr>
-<tr>
-<td>city</td>
-<td>string</td>
-<td>‘杭州市’/‘杨浦区’</td>
-<td>城市/区域名称</td>
-</tr>
-<tr>
-<td>isMunicipality</td>
-<td>boolean</td>
-<td>True / False</td>
-<td>是否是直辖市</td>
-</tr>
-<tr>
-<td>status</td>
-<td>int</td>
-<td>返回结果状态值</td>
-<td>值为0或1,0表示失败；1表示成功</td>
-</tr>
-<tr>
-<td>info</td>
-<td>string</td>
-<td>返回状态说明</td>
-<td>返回状态说明，status为0时，info返回错误原因，否则返回“OK”。</td>
-</tr>
-</tbody>
-</table>
-
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ol>
+<li>不用<code>position:absolute</code>，或者</li>
+<li>找到iconfont偏移原因</li>
+</ol>
+<h3 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h3><h4 id="环境调查：-1"><a href="#环境调查：-1" class="headerlink" title="环境调查："></a>环境调查：</h4><pre><code>* ios系统微信浏览器
+* android系统微信浏览器+手机浏览器
+* chrome PC 模拟手机浏览器（开发环境）
+</code></pre><h4 id="调查结果-1"><a href="#调查结果-1" class="headerlink" title="调查结果"></a>调查结果</h4><blockquote>
+<p>开发环境（chrome PC 模拟手机浏览器）与设计图一致，其余字体偏移</p>
+</blockquote>
+<p>@2017.06.07转交</p>
+<p>@2017.06.14回到我手里</p>
+<script async src="//jsfiddle.net/geogia/n3q14axs/9/embed/"></script>
     </div>
     
     <br/>

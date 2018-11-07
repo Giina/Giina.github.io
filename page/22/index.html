@@ -22,19 +22,13 @@
         
         
         <article id="post">
-    <h1>4月bug
+    <h1>iconfont偏移实例
         <hr>
     </h1>
     <span class="date">2018-10-22</span>
     <div class="content markdown-body">
-        <h3 id="1-Nuxj-bootstrap-jquery-is-not-defined"><a href="#1-Nuxj-bootstrap-jquery-is-not-defined" class="headerlink" title="1. Nuxj+bootstrap: jquery is not defined"></a>1. Nuxj+bootstrap: jquery is not defined</h3><p><a href="https://github.com/nuxt/nuxt.js/issues/178" target="_blank" rel="external">官方github issue</a></p>
-<h3 id="2-inline-block元素有间距"><a href="#2-inline-block元素有间距" class="headerlink" title="2. inline-block元素有间距"></a>2. inline-block元素有间距</h3><p><a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">去除inline-block元素间间距的N种方法</a></p>
-<h3 id="3-vue-when-I-use-array-to-bind-a-class-like-class-quot-active-array-3-quot-UI-refreshes-very-slow"><a href="#3-vue-when-I-use-array-to-bind-a-class-like-class-quot-active-array-3-quot-UI-refreshes-very-slow" class="headerlink" title="3. vue when I use array to bind a class like :class=&quot;{active:array[3]}&quot;, UI refreshes very slow"></a>3. vue when I use array to bind a class like <code>:class=&quot;{active:array[3]}&quot;</code>, UI refreshes very slow</h3><h3 id="4-‘-’-is-not-defined-no-undef"><a href="#4-‘-’-is-not-defined-no-undef" class="headerlink" title="4. ‘$’ is not defined no-undef"></a>4. ‘$’ is not defined no-undef</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> ERROR  Failed to compile with 1 errors                         11:26:18</div><div class="line"></div><div class="line"> error  in ./pages/technologies/index.vue</div><div class="line"></div><div class="line">E:\Project\MetaLab2\maikeji_v6_front_mobile\pages\technologies\index.vue</div><div class="line">  89:11  error  &apos;$&apos; is not defined       no-undef</div><div class="line">  90:17  error  &apos;$&apos; is not defined       no-undef</div><div class="line">  90:43  error  &apos;$&apos; is not defined       no-undef</div><div class="line">  91:15  error  &apos;$&apos; is not defined       no-undef</div><div class="line">  93:15  error  &apos;$&apos; is not defined       no-undef</div><div class="line"></div><div class="line">✖ 6 problems (6 errors, 0 warnings)</div></pre></td></tr></table></figure>
-<p><a href="https://github.com/SimulatedGREG/electron-vue/issues/36" target="_blank" rel="external">answer</a><br>It looks like you got everything setup properly. The error you are receiving is from ESLint’s no-undef rule. Since jQuery uses the global variable $ or jQuery, ESLint needs to be configured to know about it. Within your .eslintrc.js file, add them to globals.</p>
-<p>.eslintrc.js (docs)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  // Other configs...</div><div class="line">  &quot;globals&quot;: &#123;</div><div class="line">    &quot;$&quot;: true,</div><div class="line">    &quot;jQuery&quot;: true</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>区分问题1和4</p>
-
+        <h2 id="实例描述"><a href="#实例描述" class="headerlink" title="实例描述"></a>实例描述</h2><p>对比了iconfont和glyphicon（bootstrap中），请用mac浏览器和win浏览器分别打开这个页面，可以发现，mac浏览器中iconfont整体向上移动了</p>
+<script async src="//jsfiddle.net/geogia/n3q14axs/9/embed/"></script>
     </div>
     
     <br/>

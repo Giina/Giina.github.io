@@ -22,16 +22,30 @@
         
         
         <article id="post">
-    <h1>3月工作
+    <h1>2018.8月
         <hr>
     </h1>
     <span class="date">2018-10-22</span>
     <div class="content markdown-body">
-        <h3 id="1-nuxtjs之plugins"><a href="#1-nuxtjs之plugins" class="headerlink" title="1.nuxtjs之plugins"></a>1.nuxtjs之plugins</h3><blockquote>
-<p><a href="https://zh.nuxtjs.org/guide/plugins#%E4%BD%BF%E7%94%A8-vue-%E6%8F%92%E4%BB%B6" target="_blank" rel="external">使用 Vue 插件</a></p>
-</blockquote>
-<p>上述文档中说“插件会被会被打包至应用的脚本代码里， 但是它属于第三方库，我们理应将它打包至库文件里以获得更好的缓存效果。（译者注：应用代码比库文件修改频繁，应尽量将第三方库打包至单独的文件中去）。”，然后通过在vendor中添加plugins文件，可以实现这个目的。<br>用代码试验了一下，写在vendor中的会成为vendor.bundle.js中不同的代码块。</p>
-<h3 id="2-istanbul"><a href="#2-istanbul" class="headerlink" title="2. istanbul"></a>2. istanbul</h3><p><a href="http://www.techug.com/post/istanbul.html" target="_blank" rel="external">代码覆盖率工具istanbul</a></p>
+        <h1 id="2018-08-30"><a href="#2018-08-30" class="headerlink" title="2018-08-30"></a>2018-08-30</h1><h3 id="1-ios-weapp-中时间-Invalid-Date"><a href="#1-ios-weapp-中时间-Invalid-Date" class="headerlink" title="1.ios weapp 中时间 Invalid Date"></a>1.ios weapp 中时间 Invalid Date</h3><p>console.log(‘time:’, new Date(‘2018-08-23 11:15:27 UTC’).toString(), new Date(‘2018-08-28T02:14:46.317Z’).toString())这行代码在ios端小程序打印出来是 time : Invalid Date Tue Aug 28 2018 10:14:46 GMT +0800(CST)</p>
+<h1 id="2018-08-24"><a href="#2018-08-24" class="headerlink" title="2018-08-24"></a>2018-08-24</h1><h3 id="1-npm-install和npm-i差别"><a href="#1-npm-install和npm-i差别" class="headerlink" title="1. npm install和npm i差别"></a>1. npm install和npm i差别</h3><p>发现npm install（新版）会生成package-lock.json</p>
+<h1 id="2018-08-21"><a href="#2018-08-21" class="headerlink" title="2018-08-21"></a>2018-08-21</h1><h3 id="1-后端传的二进制流到底要怎样才能直接显示呢？"><a href="#1-后端传的二进制流到底要怎样才能直接显示呢？" class="headerlink" title="1.后端传的二进制流到底要怎样才能直接显示呢？"></a>1.后端传的二进制流到底要怎样才能直接显示呢？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">responseType: &apos;arraybuffer&apos;</div><div class="line"></div><div class="line">vm.codeData = btoa(new Uint8Array(res.data).reduce((data, byte) =&gt; data + String.fromCharCode(byte), &apos;&apos;))</div></pre></td></tr></table></figure>
+<p>失败尝试：</p>
+<ol>
+<li>直接放入src</li>
+<li>headers设置content-type（告诉服务器端传入的参数类型）</li>
+<li>二进制流转base64（blob）</li>
+</ol>
+<p>成功原理：</p>
+<ol>
+<li>ArrayBuffer是二进制数据</li>
+<li>btoa() 函数能够从二进制数据“字符串”创建一个base-64编码的ASCII字符串。<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WindowBase64/Base64_encoding_and_decoding" target="_blank" rel="external">Base64的编码与解码</a><br><img src="https://upload-images.jianshu.io/upload_images/139609-052b0f5ae4e1aa2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="请求举例"></li>
+</ol>
+<h1 id="2018-08-20"><a href="#2018-08-20" class="headerlink" title="2018-08-20"></a>2018-08-20</h1><h3 id="1-chrome-a标签-download属性，新窗口预览BUG（跨域也无法下载）"><a href="#1-chrome-a标签-download属性，新窗口预览BUG（跨域也无法下载）" class="headerlink" title="1. chrome a标签 download属性，新窗口预览BUG（跨域也无法下载）"></a>1. chrome a标签 download属性，新窗口预览BUG（跨域也无法下载）</h3><h1 id="2018-08-12"><a href="#2018-08-12" class="headerlink" title="2018-08-12"></a>2018-08-12</h1><h1 id="padding-top，-margin-top，-top-百分比时，基于哪个数据进行的计算？"><a href="#padding-top，-margin-top，-top-百分比时，基于哪个数据进行的计算？" class="headerlink" title="padding-top， margin-top， top 百分比时，基于哪个数据进行的计算？"></a>padding-top， margin-top， top 百分比时，基于哪个数据进行的计算？</h1><h1 id="2018-08-10"><a href="#2018-08-10" class="headerlink" title="2018-08-10"></a>2018-08-10</h1><h3 id="1-三个时间取最大值应该用什么方法？如果是n个时间取最大值呢？"><a href="#1-三个时间取最大值应该用什么方法？如果是n个时间取最大值呢？" class="headerlink" title="1. 三个时间取最大值应该用什么方法？如果是n个时间取最大值呢？"></a>1. 三个时间取最大值应该用什么方法？如果是n个时间取最大值呢？</h3><ol>
+<li>Array.sort()</li>
+<li>Math.max()</li>
+</ol>
+<p>解决方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new Date(Math.max(new Date(project.publishedAt || 0), new Date(project.updatedAt || 0), new Date((project.latestProgress &amp;&amp; project.latestProgress.publishedAt) || 0)))</div></pre></td></tr></table></figure></p>
 
     </div>
     

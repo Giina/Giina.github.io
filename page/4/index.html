@@ -22,24 +22,21 @@
         
         
         <article id="post">
-    <h1>2018.6月
+    <h1>2018.9月
         <hr>
     </h1>
     <span class="date">2018-10-22</span>
     <div class="content markdown-body">
-        <h2 id="1-微信开发工具快捷键"><a href="#1-微信开发工具快捷键" class="headerlink" title="1. 微信开发工具快捷键"></a>1. 微信开发工具快捷键</h2><h3 id="界面控制（非官方）"><a href="#界面控制（非官方）" class="headerlink" title="界面控制（非官方）"></a>界面控制（非官方）</h3><pre><code>* `Ctrl+Shift+I`:工具栏
-* `Ctrl+Shift+M`:目录树
-* `Ctrl+Shift+D`:调试栏
-* `Ctrl+Shift+I`:模拟器
-</code></pre><h3 id="开发快捷键"><a href="#开发快捷键" class="headerlink" title="开发快捷键"></a>开发快捷键</h3><pre><code>* `Ctrl+D`:选中单词，多次重复继续选中相同单词
-* `Ctrl+Shift+L`:选中文件内所有相同单词
-* `Ctrl+End/Home`:跳转到文件结尾/开头
-* `Ctrl+I`:选中一行
-* `Shift+End/Home`:跳转到行尾/行首
-* `Ctrl+Shift+X`:格式化代码（非官方）
-</code></pre><h3 id="项目文件"><a href="#项目文件" class="headerlink" title="项目文件"></a>项目文件</h3><pre><code>* `Ctrl+P`:根据文件名快速打开文件
-* `Ctrl+E`:根据打开历史快速打开文件
-</code></pre><h2 id="2-wepy中生命周期函数onLoad无法调用methods方法"><a href="#2-wepy中生命周期函数onLoad无法调用methods方法" class="headerlink" title="2. wepy中生命周期函数onLoad无法调用methods方法"></a>2. wepy中生命周期函数onLoad无法调用methods方法</h2><p><a href="https://github.com/Tencent/wepy/issues/180" target="_blank" rel="external">自定义方法不充许直接调用事件，事件中可以调用自定义方法</a></p>
+        <h1 id="2018-09-05"><a href="#2018-09-05" class="headerlink" title="2018-09-05"></a>2018-09-05</h1><h3 id="1-配置型组件的实现"><a href="#1-配置型组件的实现" class="headerlink" title="1.配置型组件的实现"></a>1.配置型组件的实现</h3><ol>
+<li>v-bind<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 绑定一个有属性的对象 --&gt;</div><div class="line">&lt;div v-bind=&quot;&#123; id: someProp, &apos;other-attr&apos;: otherProp &#125;&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="2018-09-06"><a href="#2018-09-06" class="headerlink" title="2018-09-06"></a>2018-09-06</h1><h3 id="1-深拷贝"><a href="#1-深拷贝" class="headerlink" title="1. 深拷贝"></a>1. 深拷贝</h3><h3 id="2-Array-reduce"><a href="#2-Array-reduce" class="headerlink" title="2. Array.reduce"></a>2. Array.reduce</h3><h1 id="2018-09-11"><a href="#2018-09-11" class="headerlink" title="2018-09-11"></a>2018-09-11</h1><h3 id="1-nginx、windows-server"><a href="#1-nginx、windows-server" class="headerlink" title="1. nginx、windows server"></a>1. nginx、windows server</h3><p>一台服务器多个网站配置，<br>linux通过nginx可以将多个网站和服务器的不同端口对应，从而实现上述目标；<br>windows server通过多个内网ip实现</p>
+<h1 id="2018-09-12"><a href="#2018-09-12" class="headerlink" title="2018-09-12"></a>2018-09-12</h1><h3 id="1-height动画android卡顿"><a href="#1-height动画android卡顿" class="headerlink" title="1. height动画android卡顿"></a>1. height动画android卡顿</h3><p>替代方案：</p>
+<ul>
+<li>scrollTop + scrollToView （更改scrollTop的时候有明显的滚动效果，失败）</li>
+<li>scale、transformY适合脱离文档流定位的元素</li>
+</ul>
 
     </div>
     

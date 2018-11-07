@@ -22,25 +22,13 @@
         
         
         <article id="post">
-    <h1>屏蔽百度搜索结果右侧广告栏
+    <h1>BB
         <hr>
     </h1>
-    <span class="date">2018-10-22</span>
+    <span class="date">2018-11-07</span>
     <div class="content markdown-body">
-        <p>首先吐槽一下公司梯子太慢（对不起！我应该自己想办法解决的），更多时候想要快速获取搜索结果/搜索一些国内八卦（百度给我一种能挖到更多的错觉）。。。等等等</p>
-<p>总之就是70%的搜索还是依赖百度的，像我等~好奇星人~大眼星人，百度搜索结果右侧的广告总是会看见的、遇到好奇的就会手贱去点，正中了百度的下怀！</p>
-<p>为了屏蔽这些可能转移我注意力的广告（从外部提高自己的专注力）+ 前端的本能，本来想着是不是写一个chrome插件；后来一想肯定有轮子，于是我搭上了前辈的小车车。</p>
-<h2 id="关键词-tampermonkey"><a href="#关键词-tampermonkey" class="headerlink" title="关键词 tampermonkey"></a>关键词 <code>tampermonkey</code></h2><h3 id="step1-安装tampermonkey插件"><a href="#step1-安装tampermonkey插件" class="headerlink" title="step1. 安装tampermonkey插件"></a>step1. 安装tampermonkey插件</h3><p>没错，还是一个chrome插件，不过人家功能强大——用户脚本管理；<a href="https://tampermonkey.net/" target="_blank" rel="external">tampermonkey，此处是官网链接</a></p>
-<h3 id="step2-添加你的我的他的脚本"><a href="#step2-添加你的我的他的脚本" class="headerlink" title="step2. 添加你的我的他的脚本"></a>step2. 添加你的我的他的脚本</h3><p>第二步的选择就很多啦，安装完插件后点击那只黑色的脑袋，可以选择获取新脚本/添加新脚本；</p>
-<ul>
-<li><p>没有编程基础&amp;不想挑战自己的人咧，可以使用<a href="https://blog.csdn.net/pyufftj/article/details/73479898" target="_blank" rel="external"><br>平_fan</a>这位前辈提供的脚本，点击链接有使用教程可以直接跳过下面的内容了</p>
-</li>
-<li><p>有搬砖基础的人譬如我，就决定体验一下这个插件自己写脚本啦</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// ==UserScript==</div><div class="line">// @name         hack baidu</div><div class="line">// @namespace    http://tampermonkey.net/</div><div class="line">// @version      0.1</div><div class="line">// @description  try to take over BAIDU!</div><div class="line">// @author       Jane</div><div class="line">// @match        *://*.baidu.com/*</div><div class="line">// @grant        none</div><div class="line">// ==/UserScript==</div><div class="line"></div><div class="line">(function() &#123;</div><div class="line">    &apos;use strict&apos;;</div><div class="line"></div><div class="line">    document.getElementById(&apos;content_right&apos;).style.display=&apos;none&apos;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>一点挑战都没有的写了一行代码；UserScript中写的是配置信息；记得保存</p>
-<h3 id="step3-byebye广告栏"><a href="#step3-byebye广告栏" class="headerlink" title="step3. byebye广告栏"></a>step3. byebye广告栏</h3>
+        <script async src="//jsfiddle.net/geogia/h3a5ywks/5/embed/result/"></script>
+
     </div>
     
     <br/>

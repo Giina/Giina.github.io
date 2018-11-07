@@ -22,22 +22,32 @@
         
         
         <article id="post">
-    <h1>vscode 使用手册
+    <h1>《什么是模块化CSS》读后感
         <hr>
     </h1>
     <span class="date">2018-10-22</span>
     <div class="content markdown-body">
-        <h3 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h3><ul>
-<li>开关右侧小地图 : <code>ctrl+shift+p</code> -&gt; <code>toggle minimap</code></li>
-<li>开关左侧侧边栏 : <code>ctrl+b</code></li>
-<li>关闭窗口 : <code>ctrl+w</code></li>
-</ul>
-<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><ul>
-<li>选中单词/选中下一个相同单词 : <code>ctrl+d</code></li>
-<li>选中光标处相同单词 : <code>ctrl+shift+l</code></li>
-<li>选中一行 : <code>ctrl+i</code></li>
-<li>删除当前行 : <code>shift+del</code></li>
-</ul>
+        <blockquote>
+<blockquote>
+<p><a href="https://juejin.im/post/5bb6c5195188255c9e02e6f3" target="_blank" rel="external">《什么是模块化CSS？》</a>读后感</p>
+</blockquote>
+</blockquote>
+<h2 id="接触模块化"><a href="#接触模块化" class="headerlink" title="接触模块化"></a>接触模块化</h2><p>从迈科技V5版本开始我就阅读过模块化的相关文章，学习了一些关于BEM相关的知识并尝试运用到代码编写中。但是阅读完这篇文章，我发现我的运用都是很肤浅且不达标的；为了不让CSS的类名过长我放弃使用命名约定，这样产生的样式类名十分的混乱、阅读性差、命名总是很纠结；多层嵌套和不显著区分块和元素的结果是，代码的重用性很低，只能通过复制粘贴、写覆盖样式来更新样式；非常感谢这篇文章和我在这段时间内累积的经验，相信之后我写的CSS会更好（重用和维护）</p>
+<h2 id="CSS编写障碍"><a href="#CSS编写障碍" class="headerlink" title="CSS编写障碍"></a>CSS编写障碍</h2><ol>
+<li>不知道该如何命名</li>
+<li>多层嵌套</li>
+<li>为了避免类名过长导致的类名混乱</li>
+<li>代码重用性低</li>
+<li>代码维护困难</li>
+</ol>
+<h2 id="CSS编写规则"><a href="#CSS编写规则" class="headerlink" title="CSS编写规则"></a>CSS编写规则</h2><ol>
+<li>模块化系统、模块化类别</li>
+<li>遵守命名约定和前缀命名</li>
+<li>任何元素都是块的子元素，拒绝多层嵌套</li>
+<li>不使用ID</li>
+</ol>
+<h2 id="拒绝纸上谈兵"><a href="#拒绝纸上谈兵" class="headerlink" title="拒绝纸上谈兵"></a>拒绝纸上谈兵</h2><p>知道了该如何做之后更重要的是把这件事情做完，我应该将这些规则应用到现有的项目代码中，进一步体会上述规则带来的好处；</p>
+<p>作者在这里只是简要概括了OOCSS，BEM，SMACSS的特点，我需要阅读更多的文章和代码，看别人是如何运用并总结他们的经验的，但是不可以盲目地跟从他们。</p>
 
     </div>
     

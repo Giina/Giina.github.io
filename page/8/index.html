@@ -22,34 +22,24 @@
         
         
         <article id="post">
-    <h1>监控视频播放粗糙demo制作过程
+    <h1>2018.6月
         <hr>
     </h1>
     <span class="date">2018-10-22</span>
     <div class="content markdown-body">
-        <h2 id="PlayCtrl-dll"><a href="#PlayCtrl-dll" class="headerlink" title="PlayCtrl.dll"></a>PlayCtrl.dll</h2><ol>
-<li>What is PlayCtrl.dll?<br>软解码库组件（windows），主要用于对实时码流数据进行解码显示（预览功能）和对录像文件进行<code>回放解码</code>等。</li>
-<li>Why is PlayCtrl.dll?<br>项目需求：海康威视监控产品保存的录像格式需要特定的SDK才能解码播放。</li>
-<li>How to use?<br><code>Attention</code>本段内容仅关注录像播放，无任何复杂功能。</li>
-</ol>
-<h3 id="step1：封装API"><a href="#step1：封装API" class="headerlink" title="step1：封装API"></a>step1：封装API</h3><p>官方提供了C++的动态链接库(Dynamic-Link Library)，第一步就是用C#类来封装其中的方法，以供用户使用。</p>
-<blockquote>
-<p>A dynamic-link library (DLL) is a module that contains functions and data that can be used by another module (application or DLL).<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms682589(v=vs.85" target="_blank" rel="external">[see more]</a>.aspx)</p>
-</blockquote>
-<p>基本用法如下：<br>    c++ 头文件中的定义：<br>    NPD_API int   NP_Init();<br>    C#中定义函数<br>    [DllImport(“npd_api.dll”)]<br>    public static extern int NP_Init();<br><a href="http://www.cnblogs.com/wdysunflower/archive/2010/09/01/1813947.html" target="_blank" rel="external">[see more:前辈经验]</a><br><a href="http://www.cnblogs.com/dashouqianxiaoshou/p/3953312.html" target="_blank" rel="external">[使用实例1-胡双挺]</a><br><a href="http://www.cnblogs.com/over140/archive/2010/03/12/1683973.html" target="_blank" rel="external">[使用实例2-农民伯伯]</a></p>
-<h3 id="step2：简单粗糙的界面"><a href="#step2：简单粗糙的界面" class="headerlink" title="step2：简单粗糙的界面"></a>step2：简单粗糙的界面</h3><p>只是为了测试播放，所以界面简单而粗糙。我在Winform和WPF中分别尝试了一下：</p>
-<ul>
-<li><p>###Winform<br>pictureBox + openFileDialog + button<br><img src="http://ww2.sinaimg.cn/large/0063MPrKjw1erua6gzu2ej308f08ezkk.jpg" alt="如图"></p>
-</li>
-<li><p>###WPF<br>在这里遇到了两个问题：</p>
-<ul>
-<li><a href="http://bbs.csdn.net/topics/390363911" target="_blank" rel="external">WPF中获得句柄问题</a></li>
-<li><a href="http://q.cnblogs.com/q/45220/" target="_blank" rel="external">AllowsTransparency与win32控件冲突</a>、<a href="https://social.msdn.microsoft.com/Forums/zh-CN/60be586b-f7c1-4191-a578-756bc6707977/wpfdirectshow?forum=wpfzhchs" target="_blank" rel="external">关于WPF用DirectShow做视频播放问题</a>、<a href="https://social.msdn.microsoft.com/Forums/zh-CN/3ac7f98c-e128-4c84-9138-e5d8d51904fc/how-to-avoid-airspace-problem-wpf-with-winforms-control?forum=wpf" target="_blank" rel="external">How to avoid Airspace problem</a>、<a href="http://blog.csdn.net/yangyy9611/article/details/17464133" target="_blank" rel="external">WPF下YUV播放的D3D解决方案</a></li>
-</ul>
-</li>
-</ul>
-<p>界面代码请自行百度：wpf picturebox</p>
-<h3 id="step3：两行代码搞定播放"><a href="#step3：两行代码搞定播放" class="headerlink" title="step3：两行代码搞定播放"></a>step3：两行代码搞定播放</h3><p><code>PlayM4_OpenFile()</code>、<code>PlayM4_Play()</code></p>
+        <h2 id="1-微信开发工具快捷键"><a href="#1-微信开发工具快捷键" class="headerlink" title="1. 微信开发工具快捷键"></a>1. 微信开发工具快捷键</h2><h3 id="界面控制（非官方）"><a href="#界面控制（非官方）" class="headerlink" title="界面控制（非官方）"></a>界面控制（非官方）</h3><pre><code>* `Ctrl+Shift+I`:工具栏
+* `Ctrl+Shift+M`:目录树
+* `Ctrl+Shift+D`:调试栏
+* `Ctrl+Shift+I`:模拟器
+</code></pre><h3 id="开发快捷键"><a href="#开发快捷键" class="headerlink" title="开发快捷键"></a>开发快捷键</h3><pre><code>* `Ctrl+D`:选中单词，多次重复继续选中相同单词
+* `Ctrl+Shift+L`:选中文件内所有相同单词
+* `Ctrl+End/Home`:跳转到文件结尾/开头
+* `Ctrl+I`:选中一行
+* `Shift+End/Home`:跳转到行尾/行首
+* `Ctrl+Shift+X`:格式化代码（非官方）
+</code></pre><h3 id="项目文件"><a href="#项目文件" class="headerlink" title="项目文件"></a>项目文件</h3><pre><code>* `Ctrl+P`:根据文件名快速打开文件
+* `Ctrl+E`:根据打开历史快速打开文件
+</code></pre><h2 id="2-wepy中生命周期函数onLoad无法调用methods方法"><a href="#2-wepy中生命周期函数onLoad无法调用methods方法" class="headerlink" title="2. wepy中生命周期函数onLoad无法调用methods方法"></a>2. wepy中生命周期函数onLoad无法调用methods方法</h2><p><a href="https://github.com/Tencent/wepy/issues/180" target="_blank" rel="external">自定义方法不充许直接调用事件，事件中可以调用自定义方法</a></p>
 
     </div>
     
